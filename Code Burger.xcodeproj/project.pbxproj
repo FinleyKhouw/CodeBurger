@@ -8,26 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7124822D32B65009F4F5E /* AppDelegate.swift */; };
-		BEA7124B22D32B65009F4F5E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEA7124A22D32B65009F4F5E /* GameScene.sks */; };
-		BEA7124D22D32B65009F4F5E /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEA7124C22D32B65009F4F5E /* Actions.sks */; };
-		BEA7124F22D32B65009F4F5E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7124E22D32B65009F4F5E /* GameScene.swift */; };
+		BEA7124F22D32B65009F4F5E /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7124E22D32B65009F4F5E /* Start.swift */; };
 		BEA7125122D32B65009F4F5E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7125022D32B65009F4F5E /* GameViewController.swift */; };
 		BEA7125422D32B65009F4F5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7125222D32B65009F4F5E /* Main.storyboard */; };
 		BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7125522D32B66009F4F5E /* Assets.xcassets */; };
 		BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7125722D32B66009F4F5E /* LaunchScreen.storyboard */; };
+		BEA7126222D35824009F4F5E /* CharacterSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126122D35824009F4F5E /* CharacterSelect.swift */; };
+		BEA7126422D35846009F4F5E /* StageSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126322D35846009F4F5E /* StageSelect.swift */; };
+		BEA7126722D35885009F4F5E /* SequenceStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126622D35885009F4F5E /* SequenceStage.swift */; };
+		BEA7126A22D358BD009F4F5E /* CraneStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126922D358BD009F4F5E /* CraneStage.swift */; };
+		BEA7126D22D358D8009F4F5E /* MazeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126C22D358D8009F4F5E /* MazeStage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEA7124522D32B65009F4F5E /* Code Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Burger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA7124822D32B65009F4F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEA7124A22D32B65009F4F5E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		BEA7124C22D32B65009F4F5E /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		BEA7124E22D32B65009F4F5E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BEA7124E22D32B65009F4F5E /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		BEA7125022D32B65009F4F5E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BEA7125322D32B65009F4F5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEA7125522D32B66009F4F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA7125822D32B66009F4F5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA7125A22D32B66009F4F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA7126122D35824009F4F5E /* CharacterSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelect.swift; sourceTree = "<group>"; };
+		BEA7126322D35846009F4F5E /* StageSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelect.swift; sourceTree = "<group>"; };
+		BEA7126622D35885009F4F5E /* SequenceStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceStage.swift; sourceTree = "<group>"; };
+		BEA7126922D358BD009F4F5E /* CraneStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraneStage.swift; sourceTree = "<group>"; };
+		BEA7126C22D358D8009F4F5E /* MazeStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeStage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +67,51 @@
 			isa = PBXGroup;
 			children = (
 				BEA7124822D32B65009F4F5E /* AppDelegate.swift */,
-				BEA7124A22D32B65009F4F5E /* GameScene.sks */,
-				BEA7124C22D32B65009F4F5E /* Actions.sks */,
-				BEA7124E22D32B65009F4F5E /* GameScene.swift */,
 				BEA7125022D32B65009F4F5E /* GameViewController.swift */,
+				BEA7126022D35806009F4F5E /* Start (Opening) */,
+				BEA7126522D35861009F4F5E /* Sequence */,
+				BEA7126822D3589E009F4F5E /* Commands (Crane) */,
+				BEA7126B22D358C5009F4F5E /* Maze */,
 				BEA7125222D32B65009F4F5E /* Main.storyboard */,
 				BEA7125522D32B66009F4F5E /* Assets.xcassets */,
 				BEA7125722D32B66009F4F5E /* LaunchScreen.storyboard */,
 				BEA7125A22D32B66009F4F5E /* Info.plist */,
 			);
 			path = "Code Burger";
+			sourceTree = "<group>";
+		};
+		BEA7126022D35806009F4F5E /* Start (Opening) */ = {
+			isa = PBXGroup;
+			children = (
+				BEA7124E22D32B65009F4F5E /* Start.swift */,
+				BEA7126122D35824009F4F5E /* CharacterSelect.swift */,
+				BEA7126322D35846009F4F5E /* StageSelect.swift */,
+			);
+			name = "Start (Opening)";
+			sourceTree = "<group>";
+		};
+		BEA7126522D35861009F4F5E /* Sequence */ = {
+			isa = PBXGroup;
+			children = (
+				BEA7126622D35885009F4F5E /* SequenceStage.swift */,
+			);
+			name = Sequence;
+			sourceTree = "<group>";
+		};
+		BEA7126822D3589E009F4F5E /* Commands (Crane) */ = {
+			isa = PBXGroup;
+			children = (
+				BEA7126922D358BD009F4F5E /* CraneStage.swift */,
+			);
+			name = "Commands (Crane)";
+			sourceTree = "<group>";
+		};
+		BEA7126B22D358C5009F4F5E /* Maze */ = {
+			isa = PBXGroup;
+			children = (
+				BEA7126C22D358D8009F4F5E /* MazeStage.swift */,
+			);
+			name = Maze;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,10 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA7125422D32B65009F4F5E /* Main.storyboard in Resources */,
-				BEA7124B22D32B65009F4F5E /* GameScene.sks in Resources */,
 				BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */,
 				BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */,
-				BEA7124D22D32B65009F4F5E /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA7124F22D32B65009F4F5E /* GameScene.swift in Sources */,
+				BEA7124F22D32B65009F4F5E /* Start.swift in Sources */,
+				BEA7126222D35824009F4F5E /* CharacterSelect.swift in Sources */,
 				BEA7125122D32B65009F4F5E /* GameViewController.swift in Sources */,
+				BEA7126D22D358D8009F4F5E /* MazeStage.swift in Sources */,
+				BEA7126722D35885009F4F5E /* SequenceStage.swift in Sources */,
+				BEA7126A22D358BD009F4F5E /* CraneStage.swift in Sources */,
 				BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */,
+				BEA7126422D35846009F4F5E /* StageSelect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

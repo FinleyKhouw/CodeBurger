@@ -18,13 +18,13 @@ class GameViewController: UIViewController {
         if (self.view as! SKView?) != nil {
             // Load the SKScene from 'GameScene.sks'
             if let view = self.view as! SKView? {
-                let scene = GameScene(size: view.frame.size)
+                let scene = MazeStage(size: view.frame.size)
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
                 view.ignoresSiblingOrder = true
                 
                 view.showsFPS = false
-                view.showsNodeCount = false
+                view.showsNodeCount = true
             }
         }
     }

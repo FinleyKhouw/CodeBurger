@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wmy-2d-Jtf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,6 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="687"/>
         </scene>
         <!--Sequence View Controller-->
         <scene sceneID="8We-r2-RzR">
@@ -37,12 +38,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pou-EL-g9p" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="776"/>
+            <point key="canvasLocation" x="139" y="1521"/>
         </scene>
         <!--Command Game View Controller-->
         <scene sceneID="p5A-nt-ckb">
             <objects>
-                <viewController id="tEN-X2-aO6" customClass="CommandGameViewController" customModule="CodeBurger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tEN-X2-aO6" customClass="CommandGameViewController" customModule="Code_Burger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dnr-58-nbR" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,6 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dT9-uv-5Ws" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="814" y="1520"/>
         </scene>
     </scenes>
 </document>

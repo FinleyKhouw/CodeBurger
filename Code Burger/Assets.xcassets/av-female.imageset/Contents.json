@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "burger.png",
+      "filename" : "av-female.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "burger2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "burger3.png",
       "scale" : "3x"
     }
   ],

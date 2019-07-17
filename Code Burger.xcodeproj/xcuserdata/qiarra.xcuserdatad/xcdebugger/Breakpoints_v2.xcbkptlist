@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Code Burger/StageTableCell.swift"
+            timestampString = "584963998.478485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "StageTableCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.lblStage.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.074697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.lblStage.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.0762841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.lblStage.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.077895"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.lblStage.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.079208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Code_Burger.StageTableCell"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.0804811"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "303">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Code_Burger.StageTableCell&gt;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.081808"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "205">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Code Burger/StageTableCell.swift"
+            timestampString = "584963998.478545"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "StageTableCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.imgStage.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.088266"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.imgStage.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.0896029"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.imgStage.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.090884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.imgStage.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.092674"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Code_Burger.StageTableCell"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.09433"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "199">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Code_Burger.StageTableCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Code_Burger.StageTableCell&gt;"
+                  moduleName = "Code Burger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiarra/Documents/CodeBurger/Code%20Burger/StageTableCell.swift"
+                  timestampString = "584890576.095675"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "107">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

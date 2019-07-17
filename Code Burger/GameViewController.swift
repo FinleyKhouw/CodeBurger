@@ -9,20 +9,30 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameViewController: UIViewController {
-
+    
+    var audioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let audioSound = Bundle.main.path(forResource: "backsound", ofType: "mp3")
         
         if (self.view as! SKView?) != nil {
             // Load the SKScene from 'GameScene.sks'
             if let view = self.view as! SKView? {
-                let scene = MazeStage(size: view.frame.size)
+                let scene = Start(size: view.frame.size)
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
                 view.ignoresSiblingOrder = true
-                
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioSound!))
+                } catch {
+                    print(error)
+                }
+                audioPlayer.numberOfLoops = -1
+                audioPlayer.play()
                 view.showsFPS = false
                 view.showsNodeCount = true
             }

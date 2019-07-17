@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-enum Command {
+enum CraneCommand {
     case left
     case right
     case down
@@ -67,7 +67,7 @@ class CommandGameScene: SKScene {
     
     // Commands
     
-    private var commands: [Command] = []
+    private var commands: [CraneCommand] = []
     private var commandNodes: [SKSpriteNode] = []
     
     let burgerPosition = 2
@@ -144,7 +144,7 @@ class CommandGameScene: SKScene {
         }
     }
     
-    func addCommandNode(_ command: Command) {
+    func addCommandNode(_ command: CraneCommand) {
         print(#function)
         
         if commandNodes.count >= 20 {

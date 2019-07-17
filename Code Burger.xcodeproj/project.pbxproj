@@ -12,10 +12,16 @@
 		5E72281622DF24AB00C03477 /* SequenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281322DF24AB00C03477 /* SequenceViewController.swift */; };
 		881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C2E5022DDC2B2006610D9 /* Main.storyboard */; };
 		881E9EDD22DCB6AD006F69E3 /* GameRoomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881E9EDC22DCB6AD006F69E3 /* GameRoomTableView.swift */; };
-		8834CF4F22D875AE0074E62C /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8834CF4E22D875AE0074E62C /* backsound.mp3 */; };
 		883F8E4522DF1FC700F300C6 /* MazeStage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 883F8E4422DF1FC700F300C6 /* MazeStage.sks */; };
 		88A40F3E22DC807900775EAB /* StageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A40F3D22DC807900775EAB /* StageTableViewCell.xib */; };
 		88A40F6422DC829200775EAB /* StageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A40F6322DC829200775EAB /* StageTableCell.swift */; };
+		B564FA2B22DF274F0063765B /* Computer Data 03.caf in Resources */ = {isa = PBXBuildFile; fileRef = B564FA2722DF274F0063765B /* Computer Data 03.caf */; };
+		B564FA2C22DF274F0063765B /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B564FA2822DF274F0063765B /* backsound.mp3 */; };
+		B564FA2D22DF274F0063765B /* Hydraulics Engaged.caf in Resources */ = {isa = PBXBuildFile; fileRef = B564FA2922DF274F0063765B /* Hydraulics Engaged.caf */; };
+		B564FA2E22DF274F0063765B /* Clank.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B564FA2A22DF274F0063765B /* Clank.mp3 */; };
+		B564FA3222DF276A0063765B /* CommandGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B564FA2F22DF276A0063765B /* CommandGameScene.sks */; };
+		B564FA3322DF276A0063765B /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3022DF276A0063765B /* CommandGameViewController.swift */; };
+		B564FA3422DF276A0063765B /* CommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3122DF276A0063765B /* CommandGameScene.swift */; };
 		BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7124822D32B65009F4F5E /* AppDelegate.swift */; };
 		BEA7124F22D32B65009F4F5E /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7124E22D32B65009F4F5E /* Start.swift */; };
 		BEA7125122D32B65009F4F5E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7125022D32B65009F4F5E /* GameViewController.swift */; };
@@ -33,10 +39,16 @@
 		5E72281322DF24AB00C03477 /* SequenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceViewController.swift; sourceTree = "<group>"; };
 		881C2E5022DDC2B2006610D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		881E9EDC22DCB6AD006F69E3 /* GameRoomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoomTableView.swift; sourceTree = "<group>"; };
-		8834CF4E22D875AE0074E62C /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
 		883F8E4422DF1FC700F300C6 /* MazeStage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeStage.sks; sourceTree = "<group>"; };
 		88A40F3D22DC807900775EAB /* StageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StageTableViewCell.xib; sourceTree = "<group>"; };
 		88A40F6322DC829200775EAB /* StageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageTableCell.swift; sourceTree = "<group>"; };
+		B564FA2722DF274F0063765B /* Computer Data 03.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Computer Data 03.caf"; sourceTree = "<group>"; };
+		B564FA2822DF274F0063765B /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
+		B564FA2922DF274F0063765B /* Hydraulics Engaged.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hydraulics Engaged.caf"; sourceTree = "<group>"; };
+		B564FA2A22DF274F0063765B /* Clank.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clank.mp3; sourceTree = "<group>"; };
+		B564FA2F22DF276A0063765B /* CommandGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CommandGameScene.sks; sourceTree = "<group>"; };
+		B564FA3022DF276A0063765B /* CommandGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
+		B564FA3122DF276A0063765B /* CommandGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameScene.swift; sourceTree = "<group>"; };
 		BEA7124522D32B65009F4F5E /* Code Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Burger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA7124822D32B65009F4F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA7124E22D32B65009F4F5E /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
@@ -61,22 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8834CF5022D875B60074E62C /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				8834CF5122D875CF0074E62C /* Audio */,
-			);
-			name = Assets;
-			sourceTree = "<group>";
-		};
-		8834CF5122D875CF0074E62C /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				8834CF4E22D875AE0074E62C /* backsound.mp3 */,
-			);
-			name = Audio;
-			sourceTree = "<group>";
-		};
 		88A40F3C22DC7FBC00775EAB /* Stage */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +82,25 @@
 				881E9EDC22DCB6AD006F69E3 /* GameRoomTableView.swift */,
 			);
 			name = Stage;
+			sourceTree = "<group>";
+		};
+		B564FA2522DF274F0063765B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B564FA2622DF274F0063765B /* Audio */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B564FA2622DF274F0063765B /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				B564FA2722DF274F0063765B /* Computer Data 03.caf */,
+				B564FA2822DF274F0063765B /* backsound.mp3 */,
+				B564FA2922DF274F0063765B /* Hydraulics Engaged.caf */,
+				B564FA2A22DF274F0063765B /* Clank.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		BEA7123C22D32B65009F4F5E = {
@@ -113,7 +128,7 @@
 				BEA7126522D35861009F4F5E /* Sequence */,
 				BEA7126822D3589E009F4F5E /* Commands (Crane) */,
 				BEA7126B22D358C5009F4F5E /* Maze */,
-				8834CF5022D875B60074E62C /* Assets */,
+				B564FA2522DF274F0063765B /* Resources */,
 				BEA7125522D32B66009F4F5E /* Assets.xcassets */,
 				881C2E5022DDC2B2006610D9 /* Main.storyboard */,
 				BEA7125722D32B66009F4F5E /* LaunchScreen.storyboard */,
@@ -146,6 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				BEA7126922D358BD009F4F5E /* CraneStage.swift */,
+				B564FA2F22DF276A0063765B /* CommandGameScene.sks */,
+				B564FA3122DF276A0063765B /* CommandGameScene.swift */,
+				B564FA3022DF276A0063765B /* CommandGameViewController.swift */,
 			);
 			name = "Commands (Crane)";
 			sourceTree = "<group>";
@@ -217,13 +235,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8834CF4F22D875AE0074E62C /* backsound.mp3 in Resources */,
 				881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */,
 				5E72281422DF24AB00C03477 /* SequenceStage.sks in Resources */,
 				BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */,
 				BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */,
 				88A40F3E22DC807900775EAB /* StageTableViewCell.xib in Resources */,
+				B564FA3222DF276A0063765B /* CommandGameScene.sks in Resources */,
+				B564FA2C22DF274F0063765B /* backsound.mp3 in Resources */,
 				883F8E4522DF1FC700F300C6 /* MazeStage.sks in Resources */,
+				B564FA2D22DF274F0063765B /* Hydraulics Engaged.caf in Resources */,
+				B564FA2E22DF274F0063765B /* Clank.mp3 in Resources */,
+				B564FA2B22DF274F0063765B /* Computer Data 03.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +258,7 @@
 			files = (
 				BEA7124F22D32B65009F4F5E /* Start.swift in Sources */,
 				BEA7126222D35824009F4F5E /* CharacterSelect.swift in Sources */,
+				B564FA3322DF276A0063765B /* CommandGameViewController.swift in Sources */,
 				BEA7125122D32B65009F4F5E /* GameViewController.swift in Sources */,
 				BEA7126D22D358D8009F4F5E /* MazeStage.swift in Sources */,
 				BEA7126A22D358BD009F4F5E /* CraneStage.swift in Sources */,
@@ -243,6 +266,7 @@
 				BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */,
 				88A40F6422DC829200775EAB /* StageTableCell.swift in Sources */,
 				5E72281522DF24AB00C03477 /* SequenceStage.swift in Sources */,
+				B564FA3422DF276A0063765B /* CommandGameScene.swift in Sources */,
 				881E9EDD22DCB6AD006F69E3 /* GameRoomTableView.swift in Sources */,
 				BEA7126422D35846009F4F5E /* StageSelect.swift in Sources */,
 			);

@@ -146,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA7126C22D358D8009F4F5E /* MazeStage.swift */,
+				BE2C676E22DF01EE00554B27 /* MazeStage.sks */,
 			);
 			name = Maze;
 			sourceTree = "<group>";
@@ -211,6 +212,7 @@
 				8834CF4F22D875AE0074E62C /* backsound.mp3 in Resources */,
 				881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */,
 				BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */,
+				BE2C676F22DF01EE00554B27 /* MazeStage.sks in Resources */,
 				BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */,
 				88A40F3E22DC807900775EAB /* StageTableViewCell.xib in Resources */,
 			);

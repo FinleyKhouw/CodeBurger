@@ -10,6 +10,7 @@
 		881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C2E5022DDC2B2006610D9 /* Main.storyboard */; };
 		881E9EDD22DCB6AD006F69E3 /* GameRoomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881E9EDC22DCB6AD006F69E3 /* GameRoomTableView.swift */; };
 		8834CF4F22D875AE0074E62C /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8834CF4E22D875AE0074E62C /* backsound.mp3 */; };
+		883F8E4522DF1FC700F300C6 /* MazeStage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 883F8E4422DF1FC700F300C6 /* MazeStage.sks */; };
 		88A40F3E22DC807900775EAB /* StageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A40F3D22DC807900775EAB /* StageTableViewCell.xib */; };
 		88A40F6422DC829200775EAB /* StageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A40F6322DC829200775EAB /* StageTableCell.swift */; };
 		BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7124822D32B65009F4F5E /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		881C2E5022DDC2B2006610D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		881E9EDC22DCB6AD006F69E3 /* GameRoomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoomTableView.swift; sourceTree = "<group>"; };
 		8834CF4E22D875AE0074E62C /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
+		883F8E4422DF1FC700F300C6 /* MazeStage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeStage.sks; sourceTree = "<group>"; };
 		88A40F3D22DC807900775EAB /* StageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StageTableViewCell.xib; sourceTree = "<group>"; };
 		88A40F6322DC829200775EAB /* StageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageTableCell.swift; sourceTree = "<group>"; };
 		BEA7124522D32B65009F4F5E /* Code Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Burger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA7126C22D358D8009F4F5E /* MazeStage.swift */,
-				BE2C676E22DF01EE00554B27 /* MazeStage.sks */,
+				883F8E4422DF1FC700F300C6 /* MazeStage.sks */,
 			);
 			name = Maze;
 			sourceTree = "<group>";
@@ -212,9 +214,9 @@
 				8834CF4F22D875AE0074E62C /* backsound.mp3 in Resources */,
 				881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */,
 				BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */,
-				BE2C676F22DF01EE00554B27 /* MazeStage.sks in Resources */,
 				BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */,
 				88A40F3E22DC807900775EAB /* StageTableViewCell.xib in Resources */,
+				883F8E4522DF1FC700F300C6 /* MazeStage.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

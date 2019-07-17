@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E72281422DF24AB00C03477 /* SequenceStage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E72281122DF24AA00C03477 /* SequenceStage.sks */; };
+		5E72281522DF24AB00C03477 /* SequenceStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281222DF24AA00C03477 /* SequenceStage.swift */; };
+		5E72281622DF24AB00C03477 /* SequenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281322DF24AB00C03477 /* SequenceViewController.swift */; };
 		881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C2E5022DDC2B2006610D9 /* Main.storyboard */; };
 		881E9EDD22DCB6AD006F69E3 /* GameRoomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881E9EDC22DCB6AD006F69E3 /* GameRoomTableView.swift */; };
 		8834CF4F22D875AE0074E62C /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8834CF4E22D875AE0074E62C /* backsound.mp3 */; };
@@ -20,12 +23,14 @@
 		BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7125722D32B66009F4F5E /* LaunchScreen.storyboard */; };
 		BEA7126222D35824009F4F5E /* CharacterSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126122D35824009F4F5E /* CharacterSelect.swift */; };
 		BEA7126422D35846009F4F5E /* StageSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126322D35846009F4F5E /* StageSelect.swift */; };
-		BEA7126722D35885009F4F5E /* SequenceStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126622D35885009F4F5E /* SequenceStage.swift */; };
 		BEA7126A22D358BD009F4F5E /* CraneStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126922D358BD009F4F5E /* CraneStage.swift */; };
 		BEA7126D22D358D8009F4F5E /* MazeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7126C22D358D8009F4F5E /* MazeStage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E72281122DF24AA00C03477 /* SequenceStage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStage.sks; sourceTree = "<group>"; };
+		5E72281222DF24AA00C03477 /* SequenceStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceStage.swift; sourceTree = "<group>"; };
+		5E72281322DF24AB00C03477 /* SequenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceViewController.swift; sourceTree = "<group>"; };
 		881C2E5022DDC2B2006610D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		881E9EDC22DCB6AD006F69E3 /* GameRoomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoomTableView.swift; sourceTree = "<group>"; };
 		8834CF4E22D875AE0074E62C /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
@@ -41,7 +46,6 @@
 		BEA7125A22D32B66009F4F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEA7126122D35824009F4F5E /* CharacterSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelect.swift; sourceTree = "<group>"; };
 		BEA7126322D35846009F4F5E /* StageSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelect.swift; sourceTree = "<group>"; };
-		BEA7126622D35885009F4F5E /* SequenceStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceStage.swift; sourceTree = "<group>"; };
 		BEA7126922D358BD009F4F5E /* CraneStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraneStage.swift; sourceTree = "<group>"; };
 		BEA7126C22D358D8009F4F5E /* MazeStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeStage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +135,9 @@
 		BEA7126522D35861009F4F5E /* Sequence */ = {
 			isa = PBXGroup;
 			children = (
-				BEA7126622D35885009F4F5E /* SequenceStage.swift */,
+				5E72281122DF24AA00C03477 /* SequenceStage.sks */,
+				5E72281222DF24AA00C03477 /* SequenceStage.swift */,
+				5E72281322DF24AB00C03477 /* SequenceViewController.swift */,
 			);
 			name = Sequence;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			files = (
 				8834CF4F22D875AE0074E62C /* backsound.mp3 in Resources */,
 				881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */,
+				5E72281422DF24AB00C03477 /* SequenceStage.sks in Resources */,
 				BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */,
 				BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */,
 				88A40F3E22DC807900775EAB /* StageTableViewCell.xib in Resources */,
@@ -231,10 +238,11 @@
 				BEA7126222D35824009F4F5E /* CharacterSelect.swift in Sources */,
 				BEA7125122D32B65009F4F5E /* GameViewController.swift in Sources */,
 				BEA7126D22D358D8009F4F5E /* MazeStage.swift in Sources */,
-				BEA7126722D35885009F4F5E /* SequenceStage.swift in Sources */,
 				BEA7126A22D358BD009F4F5E /* CraneStage.swift in Sources */,
+				5E72281622DF24AB00C03477 /* SequenceViewController.swift in Sources */,
 				BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */,
 				88A40F6422DC829200775EAB /* StageTableCell.swift in Sources */,
+				5E72281522DF24AB00C03477 /* SequenceStage.swift in Sources */,
 				881E9EDD22DCB6AD006F69E3 /* GameRoomTableView.swift in Sources */,
 				BEA7126422D35846009F4F5E /* StageSelect.swift in Sources */,
 			);

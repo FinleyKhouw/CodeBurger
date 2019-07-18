@@ -164,6 +164,13 @@ class MazeStage: SKScene {
             if (touchedNode.name == "run"){
                 runButtonTapped()
             }
+        
+            if (touchedNode.name == "back"){
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let gameViewController = storyBoard.instantiateViewController(withIdentifier: "gameViewController") as! GameViewController
+                self.view?.window?.rootViewController!.present(gameViewController, animated: true, completion: nil)
+                print("DiCKToll")
+            }
             
 //            if commandLocation.y == 200 {
 //                commandLocation.x += 100

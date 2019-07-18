@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C2E5022DDC2B2006610D9 /* Main.storyboard */; };
+		8855A72722DF35A000D216B8 /* StageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72622DF35A000D216B8 /* StageProtocols.swift */; };
+		8855A72922DF607100D216B8 /* MazeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72822DF607100D216B8 /* MazeGameViewController.swift */; };
 		B564FA4F22DF28D50063765B /* MazeStage.sks in Resources */ = {isa = PBXBuildFile; fileRef = B564FA3622DF28D50063765B /* MazeStage.sks */; };
 		B564FA5022DF28D50063765B /* MazeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3722DF28D50063765B /* MazeStage.swift */; };
 		B564FA5122DF28D50063765B /* CharacterSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3922DF28D50063765B /* CharacterSelect.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		881C2E5022DDC2B2006610D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8855A72622DF35A000D216B8 /* StageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageProtocols.swift; sourceTree = "<group>"; };
+		8855A72822DF607100D216B8 /* MazeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeGameViewController.swift; sourceTree = "<group>"; };
 		B564FA3622DF28D50063765B /* MazeStage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeStage.sks; sourceTree = "<group>"; };
 		B564FA3722DF28D50063765B /* MazeStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeStage.swift; sourceTree = "<group>"; };
 		B564FA3922DF28D50063765B /* CharacterSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelect.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			children = (
 				B564FA3622DF28D50063765B /* MazeStage.sks */,
 				B564FA3722DF28D50063765B /* MazeStage.swift */,
+				8855A72822DF607100D216B8 /* MazeGameViewController.swift */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -85,8 +90,8 @@
 		B564FA3822DF28D50063765B /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				B564FA3922DF28D50063765B /* CharacterSelect.swift */,
 				B564FA3A22DF28D50063765B /* Stage */,
+				B564FA3922DF28D50063765B /* CharacterSelect.swift */,
 				B564FA3F22DF28D50063765B /* Start.swift */,
 			);
 			path = Start;
@@ -99,6 +104,7 @@
 				B564FA3C22DF28D50063765B /* StageSelect.swift */,
 				B564FA3D22DF28D50063765B /* StageTableViewCell.xib */,
 				B564FA3E22DF28D50063765B /* GameRoomTableView.swift */,
+				8855A72622DF35A000D216B8 /* StageProtocols.swift */,
 			);
 			path = Stage;
 			sourceTree = "<group>";
@@ -261,7 +267,9 @@
 				B564FA6022DF28D50063765B /* CommandGameViewController.swift in Sources */,
 				B564FA5522DF28D50063765B /* GameRoomTableView.swift in Sources */,
 				B564FA5122DF28D50063765B /* CharacterSelect.swift in Sources */,
+				8855A72922DF607100D216B8 /* MazeGameViewController.swift in Sources */,
 				B564FA5322DF28D50063765B /* StageSelect.swift in Sources */,
+				8855A72722DF35A000D216B8 /* StageProtocols.swift in Sources */,
 				B564FA5622DF28D50063765B /* Start.swift in Sources */,
 				B564FA5222DF28D50063765B /* StageTableCell.swift in Sources */,
 				B564FA5C22DF28D50063765B /* SequenceViewController.swift in Sources */,

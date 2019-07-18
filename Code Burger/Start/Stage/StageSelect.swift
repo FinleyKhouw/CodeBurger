@@ -12,6 +12,10 @@ import UIKit
 
 class StageSelect: SKScene {
     
+    let responseMessages = [0: "sequenceStage",
+                            1: "commandStage",
+                            2: "mazeStage"]
+    
     var stageTableView = GameRoomTableView()
     let backButton = SKSpriteNode(imageNamed: "backbutton")
     let userDef = UserDefaults.standard
@@ -32,6 +36,7 @@ class StageSelect: SKScene {
         stageTableView.frame = CGRect(x:size.width/2, y:0, width: size.width/2, height:size.height)
         self.scene?.view?.addSubview(stageTableView)
         stageTableView.reloadData()
+        stageTableView.stageProtocols = self
         
         backButton.position = CGPoint(x: size.width/1 - (size.width * 0.9) , y: size.height * 0.9)
         backButton.size = CGSize(width: 100, height: 100)
@@ -70,14 +75,17 @@ class StageSelect: SKScene {
             }
         }
     }
+}
+
+extension StageSelect : StageProtocols {
     
-//    func moveStage() {
-//        if let view = self.view {
-//                stageTableView.removeFromSuperview()
-//                let scene = CharacterSelect(size: view.frame.size)
-//                scene.scaleMode = .aspectFill
-//                view.presentScene(scene,transition: SKTransition.fade(withDuration: 1))
-//                view.ignoresSiblingOrder = true
-//        }
-//    }
+    func moveScene(_ indexPath: IndexPath) {
+        if self.view != nil {
+            if let indexPath = responseMessages[indexPath.row] {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let sequenceController = storyBoard.instantiateViewController(withIdentifier: indexPath)
+            self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
+            }
+        }
+    }
 }

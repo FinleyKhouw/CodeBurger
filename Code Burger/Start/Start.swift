@@ -49,14 +49,18 @@ class Start: SKScene {
             if touchedNode == playButton {
                     if let view = self.view {
                         if userDef.bool(forKey: "hasCharacter") {
-                            let scene = StageSelect(size: view.frame.size)
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                            let sequenceController = storyBoard.instantiateViewController(withIdentifier: "sequenceStage")
+                            self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
                             
-                            scene.scaleMode = .aspectFill
-                            view.presentScene(scene,transition: SKTransition.fade(withDuration: 0.5))
-                            view.ignoresSiblingOrder = true
-                            
-                            view.showsFPS = false
-                            view.showsNodeCount = true
+//                            let scene = StageSelect(size: view.frame.size)
+//                            
+//                            scene.scaleMode = .aspectFill
+//                            view.presentScene(scene,transition: SKTransition.fade(withDuration: 0.5))
+//                            view.ignoresSiblingOrder = true
+//                            
+//                            view.showsFPS = false
+//                            view.showsNodeCount = true
                         } else {
                             let scene = CharacterSelect(size: view.frame.size)
                             

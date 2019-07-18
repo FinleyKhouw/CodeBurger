@@ -19,9 +19,12 @@ enum WallPlacement {
 
 class MazeStage: SKScene {
     
-    var character = SKSpriteNode()
+    var TextureAtlas = SKTextureAtlas()
+    var TextureArray = [SKTexture]()
     
-    var backgroundScene = SKShapeNode()
+    var character = SKSpriteNode()
+    var characterWalk = SKSpriteNode()
+    
     var playButton = SKSpriteNode()
     var backButton = SKSpriteNode()
     var leftTapped = SKSpriteNode()
@@ -42,6 +45,7 @@ class MazeStage: SKScene {
     var currentPosition = 0
     
     var commandLocation = CGPoint(x: 50, y: 900)
+    var characterLocation = CGPoint(x: 550, y: 840)
     var commandNodeSize = CGSize(width: 75, height: 75)
     
     var commands: [Command] = []
@@ -63,24 +67,24 @@ class MazeStage: SKScene {
     private var commandShiftLeftDown = SKAction.moveBy(x: -180, y: -700, duration: 0.2)
     let wait = SKAction.wait(forDuration: 1)
     
+    var isRunning = false
+    
     let stage01 = [[1,1,1,0], [1,1,0,0], [0,1,0,0], [0,1,1,0], [1,0,0,1], [0,0,1,0], [1,0,0,0], [0,0,1,0], [1,1,0,0], [0,0,1,0], [1,0,1,0], [1,0,1,0], [1,0,0,1], [0,0,0,1], [0,0,0,1], [0,0,1,1]]
+    let stage02 = [[1,1,0,0], [0,1,0,1], [0,1,1,0], [1,1,1,0], [1,0,0,0], [0,1,1,0], [1,0,0,0], [0,0,1,0], [1,0,1,0], [1,0,0,1], [0,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,1,1], [1,0,1,1]]
+    let stage03 = [[1,1,1,0], [1,1,0,0], [0,1,0,1], [0,1,1,0], [1,0,1,0], [1,0,0,0], [0,1,0,0], [0,0,1,0], [1,0,0,1], [0,0,1,0], [1,0,1,0], [1,0,1,0], [1,1,1,1], [1,0,1,1], [1,0,1,1], [1,0,1,1]]
+    let stage04 = [[1,1,0,1], [0,1,1,0], [1,1,0,0], [0,1,1,1], [1,1,1,0], [1,0,1,0], [1,0,0,0], [0,1,1,0], [1,0,0,0], [0,0,1,1], [1,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,1,1], [1,0,1,1]]
     
     override func didMove(to view: SKView) {
         
-        self.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        
-        character = SKSpriteNode(imageNamed: "monster")
-        character.position = CGPoint(x: 550, y: 840)
+        character = SKSpriteNode(imageNamed: "Boy Char")
+        character.position = characterLocation
         character.size = CGSize(width: 150, height: 150)
-        
-        backgroundScene = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 400, height: 1024))
-        backgroundScene.fillColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         lineSeperator = SKShapeNode(rect: CGRect(x: 0, y: 200, width: 400, height: 10))
         lineSeperator.fillColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        playButton = SKSpriteNode(imageNamed: "run-tapped")
-        playButton.position = CGPoint(x: 900, y: 100)
+        playButton = SKSpriteNode(imageNamed: "play")
+        playButton.position = CGPoint(x: 890, y: 100)
         playButton.name = "run"
         playButton.size = CGSize(width: 100, height: 100)
         
@@ -89,37 +93,27 @@ class MazeStage: SKScene {
         backButton.position = CGPoint(x: 50, y: 970)
         backButton.size = CGSize(width: 50, height: 50)
         
-        leftTapped = SKSpriteNode(imageNamed: "left-tapped")
+        leftTapped = SKSpriteNode(imageNamed: "Left")
         leftTapped.name = "left"
         leftTapped.position = CGPoint(x: 50, y: 100)
         leftTapped.size = CGSize(width: 75, height: 75)
         
-        rightTapped = SKSpriteNode(imageNamed: "right-tapped")
+        rightTapped = SKSpriteNode(imageNamed: "Right")
         rightTapped.name = "right"
         rightTapped.position = CGPoint(x: 150, y: 100)
         rightTapped.size = CGSize(width: 75, height: 75)
         
-        upTapped = SKSpriteNode(imageNamed: "up-tapped")
+        upTapped = SKSpriteNode(imageNamed: "Up")
         upTapped.name = "up"
         upTapped.position = CGPoint(x: 250, y: 100)
         upTapped.size = CGSize(width: 75, height: 75)
         
-        downTapped = SKSpriteNode(imageNamed: "down-tapped")
+        downTapped = SKSpriteNode(imageNamed: "Down")
         downTapped.name = "down"
         downTapped.position = CGPoint(x: 350, y: 100)
         downTapped.size = CGSize(width: 75, height: 75)
         
-        
-//        wall1 = childNode(withName: "wall1") as! SKSpriteNode
-//        wall2 = childNode(withName: "wall2") as! SKSpriteNode
-//        wall3 = childNode(withName: "wall3") as! SKSpriteNode
-//        wall4 = childNode(withName: "wall4") as! SKSpriteNode
-//        wall5 = childNode(withName: "wall5") as! SKSpriteNode
-//        wall6 = childNode(withName: "wall6") as! SKSpriteNode
-        
-        
         addChilds()
-//        buildWall()
         
     }
     
@@ -142,7 +136,6 @@ class MazeStage: SKScene {
         } else if (touchedNode.name == "right") {
             commands.append(.right)
             addCommandNode(.right)
-            
         } else {
             var shiftUp = false
             for (index, commandNode) in commandNodes.enumerated() {
@@ -162,6 +155,11 @@ class MazeStage: SKScene {
             }
             
             if (touchedNode.name == "run"){
+                if isRunning == true {
+                    return
+                }
+                isRunning = true
+                playButton.run(SKAction.fadeOut(withDuration: 0.5))
                 runButtonTapped()
             }
         
@@ -188,13 +186,13 @@ class MazeStage: SKScene {
         var imageName = ""
         switch command {
         case .left:
-            imageName = "left-tapped"
+            imageName = "Left"
         case .right:
-            imageName = "right-tapped"
+            imageName = "Right"
         case .up:
-            imageName = "up-tapped"
+            imageName = "Up"
         case .down:
-            imageName = "down-tapped"
+            imageName = "Down"
         }
         
         let commandNode = SKSpriteNode(imageNamed: imageName)
@@ -211,11 +209,11 @@ class MazeStage: SKScene {
         commandNodes.append(commandNode)
     }
     
-//    func removeCommandNodes() {
-//        for commandNode in commandNodes {
-//            commandNode.removeFromParent()
-//        }
-//    }
+    //    func removeCommandNodes() {
+    //        for commandNode in commandNodes {
+    //            commandNode.removeFromParent()
+    //        }
+    //    }
     
     func runButtonTapped() {
         
@@ -231,8 +229,8 @@ class MazeStage: SKScene {
                     commandSequence.append(moveHalfLeft)
                     commandSequence.append(moveHalfRight)
                 } else if canGoLeft == 0 {
-                commandSequence.append(moveLeft)
-                currentPosition -= 1
+                    commandSequence.append(moveLeft)
+                    currentPosition -= 1
                 }
                 commandSequence.append(wait)
             case .right:
@@ -266,59 +264,28 @@ class MazeStage: SKScene {
                 }
                 commandSequence.append(wait)
             }
+            if currentPosition == 15 {
+                
+                let finishedBackground = SKSpriteNode(imageNamed: "Victory Scene")
+                finishedBackground.position = CGPoint(x: 682, y: 600)
+                finishedBackground.size = CGSize(width: 547, height: 388)
+                finishedBackground.zPosition = 15
+                
+                let addFinishedScene = SKAction.run {
+                    self.addChild(finishedBackground)
+                }
+                commandSequence.append(addFinishedScene)
+            }
         }
-        character.run(SKAction.sequence(commandSequence))
+        character.run(SKAction.sequence(commandSequence), completion: {
+            self.isRunning = false
+            self.playButton.run(SKAction.fadeIn(withDuration: 0.5))
+            self.currentPosition = 0
+        })
     }
-    
-//    func buildWall() {
-//        for (index, wall) in stage01.enumerated() {
-//
-//            let horizontalSize = CGSize(width: 20, height: 220)
-//            let verticalSize = CGSize(width: 220, height: 20)
-//
-//
-//            if index % 4 == 0 && index > 0 {
-//                y -= 220
-//            }
-//
-//            if wall[0] == 1 {
-//                let newWall = SKSpriteNode(imageNamed: "horizontal-wall")
-//                newWall.position = CGPoint(x: x - 110, y: y)
-//                newWall.zPosition = 5
-//                newWall.size = horizontalSize
-//                addChild(newWall)
-//                print(newWall.position)
-//            }
-//            if wall[1] == 1 {
-//                let newWall = SKSpriteNode(imageNamed: "vertical-wall")
-//                newWall.position = CGPoint(x: x, y: y + 110)
-//                newWall.zPosition = 5
-//                newWall.size = verticalSize
-//                addChild(newWall)
-//                print(newWall.position)
-//            }
-//            if wall[2] == 1 {
-//                let newWall = SKSpriteNode(imageNamed: "horizontal-wall")
-//                newWall.position = CGPoint(x: x + 110, y: y)
-//                newWall.zPosition = 5
-//                newWall.size = horizontalSize
-//                addChild(newWall)
-//                print(newWall.position)
-//            }
-//            if wall[3] == 1 {
-//                let newWall = SKSpriteNode(imageNamed: "vertical-wall")
-//                newWall.position = CGPoint(x: x, y: y - 110)
-//                newWall.zPosition = 5
-//                newWall.size = verticalSize
-//                addChild(newWall)
-//                print(newWall.position)
-//            }
-//        }
-//    }
     
     func addChilds() {
         addChild(character)
-        addChild(backgroundScene)
         addChild(lineSeperator)
         addChild(playButton)
         addChild(backButton)
@@ -327,7 +294,5 @@ class MazeStage: SKScene {
         addChild(upTapped)
         addChild(downTapped)
     }
-    
-    
 }
 

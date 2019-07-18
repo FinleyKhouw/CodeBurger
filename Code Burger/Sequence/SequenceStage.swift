@@ -226,9 +226,9 @@ class SequenceStage: SKScene {
             } else if fase == 4{
                 fase += 1
                 
-                pointKecil = CGPoint(x: 309, y: 240)
-                pointSedang = CGPoint(x: 642, y: 240)
-                pointBesar = CGPoint(x: 1008, y: 240)
+                pointKecil = CGPoint(x: 309, y: 270)
+                pointSedang = CGPoint(x: 642, y: 270)
+                pointBesar = CGPoint(x: 1008, y: 270)
                 
                 limaKecil.isHidden = false
                 limaSedang.isHidden = false

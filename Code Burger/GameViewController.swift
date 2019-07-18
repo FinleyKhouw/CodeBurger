@@ -14,10 +14,16 @@ import AVFoundation
 class GameViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
+    let userDef = UserDefaults.standard
+    let stage: [Int] = [1,2,3,4,5,6,7,8,9]
+    let stageStatus: [Bool] = [false, false, false,false,false,false,false,false,false]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let audioSound = Bundle.main.path(forResource: "backsound", ofType: "mp3")
+        userDef.set(stage, forKey: "stageArray")
+        userDef.set(stageStatus, forKey: "stageStatus")
         
         if (self.view as! SKView?) != nil {
             // Load the SKScene from 'GameScene.sks'

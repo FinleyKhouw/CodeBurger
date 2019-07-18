@@ -202,9 +202,9 @@ class SequenceStage: SKScene {
             } else if fase == 2{
                 fase += 1
                 
-                pointKecil = CGPoint(x: 309, y: 210)
-                pointSedang = CGPoint(x: 642, y: 210)
-                pointBesar = CGPoint(x: 1008, y: 210)
+                pointKecil = CGPoint(x: 309, y: 220)
+                pointSedang = CGPoint(x: 642, y: 220)
+                pointBesar = CGPoint(x: 1008, y: 220)
                 
                 tigaKecil.isHidden = false
                 tigaSedang.isHidden = false
@@ -214,9 +214,9 @@ class SequenceStage: SKScene {
             } else if fase == 3{
                 fase += 1
                 
-                pointKecil = CGPoint(x: 309, y: 240)
-                pointSedang = CGPoint(x: 642, y: 240)
-                pointBesar = CGPoint(x: 1008, y: 240)
+                pointKecil = CGPoint(x: 309, y: 250)
+                pointSedang = CGPoint(x: 642, y: 250)
+                pointBesar = CGPoint(x: 1008, y: 250)
                 
                 empatKecil.isHidden = false
                 empatSedang.isHidden = false
@@ -226,9 +226,9 @@ class SequenceStage: SKScene {
             } else if fase == 4{
                 fase += 1
                 
-                pointKecil = CGPoint(x: 309, y: 270)
-                pointSedang = CGPoint(x: 642, y: 270)
-                pointBesar = CGPoint(x: 1008, y: 270)
+                pointKecil = CGPoint(x: 309, y: 280)
+                pointSedang = CGPoint(x: 642, y: 280)
+                pointBesar = CGPoint(x: 1008, y: 280)
                 
                 limaKecil.isHidden = false
                 limaSedang.isHidden = false

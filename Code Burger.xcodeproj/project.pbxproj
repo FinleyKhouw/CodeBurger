@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E72281822E071BB00C03477 /* SequenceStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281722E071BB00C03477 /* SequenceStageOne.swift */; };
+		5E72281A22E168EF00C03477 /* SequenceStageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E72281922E168EF00C03477 /* SequenceStageOne.sks */; };
 		881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C2E5022DDC2B2006610D9 /* Main.storyboard */; };
 		8855A72722DF35A000D216B8 /* StageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72622DF35A000D216B8 /* StageProtocols.swift */; };
 		8855A72922DF607100D216B8 /* MazeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72822DF607100D216B8 /* MazeGameViewController.swift */; };
@@ -18,9 +20,9 @@
 		B564FA5422DF28D50063765B /* StageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B564FA3D22DF28D50063765B /* StageTableViewCell.xib */; };
 		B564FA5522DF28D50063765B /* GameRoomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3E22DF28D50063765B /* GameRoomTableView.swift */; };
 		B564FA5622DF28D50063765B /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3F22DF28D50063765B /* Start.swift */; };
-		B564FA5B22DF28D50063765B /* SequenceStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA4722DF28D50063765B /* SequenceStage.swift */; };
+		B564FA5B22DF28D50063765B /* SequenceStageThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA4722DF28D50063765B /* SequenceStageThree.swift */; };
 		B564FA5C22DF28D50063765B /* SequenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA4822DF28D50063765B /* SequenceViewController.swift */; };
-		B564FA5D22DF28D50063765B /* SequenceStage.sks in Resources */ = {isa = PBXBuildFile; fileRef = B564FA4922DF28D50063765B /* SequenceStage.sks */; };
+		B564FA5D22DF28D50063765B /* SequenceStageThree.sks in Resources */ = {isa = PBXBuildFile; fileRef = B564FA4922DF28D50063765B /* SequenceStageThree.sks */; };
 		B564FA5E22DF28D50063765B /* CraneStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA4B22DF28D50063765B /* CraneStage.swift */; };
 		B564FA5F22DF28D50063765B /* CommandGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B564FA4C22DF28D50063765B /* CommandGameScene.sks */; };
 		B564FA6022DF28D50063765B /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA4D22DF28D50063765B /* CommandGameViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E72281722E071BB00C03477 /* SequenceStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceStageOne.swift; sourceTree = "<group>"; };
+		5E72281922E168EF00C03477 /* SequenceStageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStageOne.sks; sourceTree = "<group>"; };
 		881C2E5022DDC2B2006610D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8855A72622DF35A000D216B8 /* StageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageProtocols.swift; sourceTree = "<group>"; };
 		8855A72822DF607100D216B8 /* MazeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeGameViewController.swift; sourceTree = "<group>"; };
@@ -47,9 +51,9 @@
 		B564FA3D22DF28D50063765B /* StageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StageTableViewCell.xib; sourceTree = "<group>"; };
 		B564FA3E22DF28D50063765B /* GameRoomTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoomTableView.swift; sourceTree = "<group>"; };
 		B564FA3F22DF28D50063765B /* Start.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
-		B564FA4722DF28D50063765B /* SequenceStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceStage.swift; sourceTree = "<group>"; };
+		B564FA4722DF28D50063765B /* SequenceStageThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceStageThree.swift; sourceTree = "<group>"; };
 		B564FA4822DF28D50063765B /* SequenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceViewController.swift; sourceTree = "<group>"; };
-		B564FA4922DF28D50063765B /* SequenceStage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStage.sks; sourceTree = "<group>"; };
+		B564FA4922DF28D50063765B /* SequenceStageThree.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStageThree.sks; sourceTree = "<group>"; };
 		B564FA4B22DF28D50063765B /* CraneStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CraneStage.swift; sourceTree = "<group>"; };
 		B564FA4C22DF28D50063765B /* CommandGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CommandGameScene.sks; sourceTree = "<group>"; };
 		B564FA4D22DF28D50063765B /* CommandGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
@@ -112,9 +116,11 @@
 		B564FA4622DF28D50063765B /* Sequence */ = {
 			isa = PBXGroup;
 			children = (
-				B564FA4722DF28D50063765B /* SequenceStage.swift */,
+				B564FA4722DF28D50063765B /* SequenceStageThree.swift */,
+				5E72281722E071BB00C03477 /* SequenceStageOne.swift */,
 				B564FA4822DF28D50063765B /* SequenceViewController.swift */,
-				B564FA4922DF28D50063765B /* SequenceStage.sks */,
+				B564FA4922DF28D50063765B /* SequenceStageThree.sks */,
+				5E72281922E168EF00C03477 /* SequenceStageOne.sks */,
 			);
 			path = Sequence;
 			sourceTree = "<group>";
@@ -251,7 +257,8 @@
 				B564FA6A22DF28F90063765B /* Hydraulics Engaged.caf in Resources */,
 				B564FA5422DF28D50063765B /* StageTableViewCell.xib in Resources */,
 				B564FA6B22DF28F90063765B /* Clank.mp3 in Resources */,
-				B564FA5D22DF28D50063765B /* SequenceStage.sks in Resources */,
+				5E72281A22E168EF00C03477 /* SequenceStageOne.sks in Resources */,
+				B564FA5D22DF28D50063765B /* SequenceStageThree.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B564FA5B22DF28D50063765B /* SequenceStage.swift in Sources */,
+				5E72281822E071BB00C03477 /* SequenceStageOne.swift in Sources */,
+				B564FA5B22DF28D50063765B /* SequenceStageThree.swift in Sources */,
 				B564FA5022DF28D50063765B /* MazeStage.swift in Sources */,
 				B564FA6022DF28D50063765B /* CommandGameViewController.swift in Sources */,
 				B564FA5522DF28D50063765B /* GameRoomTableView.swift in Sources */,

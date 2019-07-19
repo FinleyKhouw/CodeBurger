@@ -17,7 +17,7 @@ class SequenceViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'PrologueScene.sks'
-            if let scene = SKScene(fileNamed: "SequenceStage") {
+            if let scene = SKScene(fileNamed: "SequenceStageOne") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 

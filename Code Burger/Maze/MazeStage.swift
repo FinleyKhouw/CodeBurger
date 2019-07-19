@@ -69,12 +69,16 @@ class MazeStage: SKScene {
     
     var isRunning = false
     
-    let stage01 = [[1,1,1,0], [1,1,0,0], [0,1,0,0], [0,1,1,0], [1,0,0,1], [0,0,1,0], [1,0,0,0], [0,0,1,0], [1,1,0,0], [0,0,1,0], [1,0,1,0], [1,0,1,0], [1,0,0,1], [0,0,0,1], [0,0,0,1], [0,0,1,1]]
+    let stage01 = [[1,1,1,0], [1,1,0,0], [0,1,0,0], [0,1,1,0], [1,0,0,1], [0,0,1,0], [1,0,0,0], [0,0,1,0], [1,1,0,0], [0,0,0,1], [0,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,0,1], [0,0,1,1]]
     let stage02 = [[1,1,0,0], [0,1,0,1], [0,1,1,0], [1,1,1,0], [1,0,0,0], [0,1,1,0], [1,0,0,0], [0,0,1,0], [1,0,1,0], [1,0,0,1], [0,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,1,1], [1,0,1,1]]
     let stage03 = [[1,1,1,0], [1,1,0,0], [0,1,0,1], [0,1,1,0], [1,0,1,0], [1,0,0,0], [0,1,0,0], [0,0,1,0], [1,0,0,1], [0,0,1,0], [1,0,1,0], [1,0,1,0], [1,1,1,1], [1,0,1,1], [1,0,1,1], [1,0,1,1]]
     let stage04 = [[1,1,0,1], [0,1,1,0], [1,1,0,0], [0,1,1,1], [1,1,1,0], [1,0,1,0], [1,0,0,0], [0,1,1,0], [1,0,0,0], [0,0,1,1], [1,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,1,1], [1,0,1,1]]
     
+    var currentStage:[[Int]] = []
+    
     override func didMove(to view: SKView) {
+        
+        currentStage = stage01
         
         character = SKSpriteNode(imageNamed: "Boy Char")
         character.position = characterLocation
@@ -224,7 +228,7 @@ class MazeStage: SKScene {
         for command in commands {
             switch (command) {
             case .left:
-                let canGoLeft = stage01[currentPosition][0]
+                let canGoLeft = currentStage[currentPosition][0]
                 if canGoLeft == 1 {
                     commandSequence.append(moveHalfLeft)
                     commandSequence.append(moveHalfRight)
@@ -234,7 +238,7 @@ class MazeStage: SKScene {
                 }
                 commandSequence.append(wait)
             case .right:
-                let canGoRight = stage01[currentPosition][2]
+                let canGoRight = currentStage[currentPosition][2]
                 if canGoRight == 1 {
                     commandSequence.append(moveHalfRight)
                     commandSequence.append(moveHalfLeft)
@@ -244,7 +248,7 @@ class MazeStage: SKScene {
                 }
                 commandSequence.append(wait)
             case .up:
-                let canGoUp = stage01[currentPosition][1]
+                let canGoUp = currentStage[currentPosition][1]
                 if canGoUp == 1 {
                     commandSequence.append(moveHalfUp)
                     commandSequence.append(moveHalfDown)
@@ -254,7 +258,7 @@ class MazeStage: SKScene {
                 }
                 commandSequence.append(wait)
             case .down:
-                let canGoDown = stage01[currentPosition][3]
+                let canGoDown = currentStage[currentPosition][3]
                 if canGoDown == 1 {
                     commandSequence.append(moveHalfDown)
                     commandSequence.append(moveHalfUp)
@@ -268,11 +272,13 @@ class MazeStage: SKScene {
                 
                 let finishedBackground = SKSpriteNode(imageNamed: "Victory Scene")
                 finishedBackground.position = CGPoint(x: 682, y: 600)
-                finishedBackground.size = CGSize(width: 547, height: 388)
                 finishedBackground.zPosition = 15
+                
+                let scaleOut = SKAction.scale(to: 1.5, duration: 0.01)
                 
                 let addFinishedScene = SKAction.run {
                     self.addChild(finishedBackground)
+                    finishedBackground.run(scaleOut)
                 }
                 commandSequence.append(addFinishedScene)
             }

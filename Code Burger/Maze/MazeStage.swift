@@ -80,7 +80,7 @@ class MazeStage: SKScene {
     let stage04 = [[1,1,0,1], [0,1,1,0], [1,1,0,0], [0,1,1,1], [1,1,1,0], [1,0,1,0], [1,0,0,0], [0,1,1,0], [1,0,0,0], [0,0,1,1], [1,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,1,1], [1,0,1,1]]
     
     var currentStage:[[Int]] = []
-    var currentStageIndex = 0
+    var currentStageIndex = 1
     
     // MARK: Done Scene Assets
     
@@ -310,20 +310,20 @@ class MazeStage: SKScene {
         downTapped.position = CGPoint(x: 350, y: 100)
         downTapped.size = CGSize(width: 75, height: 75)
         
-        if currentStageIndex == 0 {
+        if currentStageIndex == 1 {
             currentStage = stage01
         }
-        if currentStageIndex == 1 {
+        if currentStageIndex == 2 {
             currentStage = stage02
         }
-        if currentStageIndex == 2 {
+        if currentStageIndex == 3 {
             currentStage = stage03
         }
-        if currentStageIndex == 3 {
+        if currentStageIndex == 4 {
             currentStage = stage04
         }
         
-        print(currentStageIndex)
+//        print(currentStageIndex)
 //        currentStageIndex += 1
     }
     
@@ -353,7 +353,7 @@ class MazeStage: SKScene {
         }
         let changeScene = SKAction.run {
             let transition = SKTransition.crossFade(withDuration: 0.5)
-            let scene = MazeStage(fileNamed: "MazeStage2")
+            let scene = MazeStage(fileNamed: "MazeStage\(self.currentStageIndex)")
             scene?.scaleMode = .aspectFill
             scene?.currentStageIndex = self.currentStageIndex + 1
             self.scene?.view?.presentScene(scene!, transition: transition)

@@ -9,7 +9,33 @@
 import SpriteKit
 
 class SequenceStageOne: SKScene {
-    
+    var boundary: SKSpriteNode!
+    var piringSatu: SKSpriteNode!
+    var piringDua: SKSpriteNode!
+    var piringTiga: SKSpriteNode!
+    var satuKecil: SKSpriteNode!
+    var satuSedang: SKSpriteNode!
+    var satuBesar: SKSpriteNode!
+    var duaKecil: SKSpriteNode!
+    var duaSedang: SKSpriteNode!
+    var duaBesar: SKSpriteNode!
+    var tigaKecil: SKSpriteNode!
+    var tigaSedang: SKSpriteNode!
+    var tigaBesar: SKSpriteNode!
+    var untouchableKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
+    var untouchableSedang =  CGRect(x: 580, y: 50, width: 250, height: 250)
+    let untouchableBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
+    var targetKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
+    let targetSedang = CGRect(x: 580, y: 50, width: 250, height: 250)
+    let targetBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
+    var pointKecil = CGPoint(x: 309, y: 160)
+    var pointSedang = CGPoint(x: 642, y: 160)
+    var pointBesar = CGPoint(x: 1008, y: 160)
+    let initialKecil = CGPoint(x: 405, y: 510)
+    let initialSedang = CGPoint(x: 648, y: 510)
+    let initialBesar = CGPoint(x: 936, y: 510)
+    var arrayKotak = [0,0,0]
+    var fase = 1
     private var currentNode: SKNode?
     
     override func didMove(to view: SKView) {

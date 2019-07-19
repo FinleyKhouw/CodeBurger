@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E72281822E071BB00C03477 /* SequenceStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281722E071BB00C03477 /* SequenceStageOne.swift */; };
 		5E72281A22E168EF00C03477 /* SequenceStageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E72281922E168EF00C03477 /* SequenceStageOne.sks */; };
+		5E72281C22E1713E00C03477 /* SequenceStageTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281B22E1713E00C03477 /* SequenceStageTwo.swift */; };
+		5E72281E22E1715300C03477 /* SequenceStageTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E72281D22E1715300C03477 /* SequenceStageTwo.sks */; };
 		881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C2E5022DDC2B2006610D9 /* Main.storyboard */; };
 		8855A72722DF35A000D216B8 /* StageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72622DF35A000D216B8 /* StageProtocols.swift */; };
 		8855A72922DF607100D216B8 /* MazeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72822DF607100D216B8 /* MazeGameViewController.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		5E72281722E071BB00C03477 /* SequenceStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceStageOne.swift; sourceTree = "<group>"; };
 		5E72281922E168EF00C03477 /* SequenceStageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStageOne.sks; sourceTree = "<group>"; };
+		5E72281B22E1713E00C03477 /* SequenceStageTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceStageTwo.swift; sourceTree = "<group>"; };
+		5E72281D22E1715300C03477 /* SequenceStageTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStageTwo.sks; sourceTree = "<group>"; };
 		881C2E5022DDC2B2006610D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8855A72622DF35A000D216B8 /* StageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageProtocols.swift; sourceTree = "<group>"; };
 		8855A72822DF607100D216B8 /* MazeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeGameViewController.swift; sourceTree = "<group>"; };
@@ -116,11 +120,13 @@
 		B564FA4622DF28D50063765B /* Sequence */ = {
 			isa = PBXGroup;
 			children = (
-				B564FA4722DF28D50063765B /* SequenceStageThree.swift */,
-				5E72281722E071BB00C03477 /* SequenceStageOne.swift */,
 				B564FA4822DF28D50063765B /* SequenceViewController.swift */,
-				B564FA4922DF28D50063765B /* SequenceStageThree.sks */,
+				5E72281722E071BB00C03477 /* SequenceStageOne.swift */,
+				5E72281B22E1713E00C03477 /* SequenceStageTwo.swift */,
+				B564FA4722DF28D50063765B /* SequenceStageThree.swift */,
 				5E72281922E168EF00C03477 /* SequenceStageOne.sks */,
+				5E72281D22E1715300C03477 /* SequenceStageTwo.sks */,
+				B564FA4922DF28D50063765B /* SequenceStageThree.sks */,
 			);
 			path = Sequence;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				B564FA6B22DF28F90063765B /* Clank.mp3 in Resources */,
 				5E72281A22E168EF00C03477 /* SequenceStageOne.sks in Resources */,
 				B564FA5D22DF28D50063765B /* SequenceStageThree.sks in Resources */,
+				5E72281E22E1715300C03477 /* SequenceStageTwo.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E72281C22E1713E00C03477 /* SequenceStageTwo.swift in Sources */,
 				5E72281822E071BB00C03477 /* SequenceStageOne.swift in Sources */,
 				B564FA5B22DF28D50063765B /* SequenceStageThree.swift in Sources */,
 				B564FA5022DF28D50063765B /* MazeStage.swift in Sources */,

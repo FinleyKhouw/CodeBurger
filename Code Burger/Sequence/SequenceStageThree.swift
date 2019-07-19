@@ -8,63 +8,70 @@
 
 import SpriteKit
 
-var boundary: SKSpriteNode!
-var piringSatu: SKSpriteNode!
-var piringDua: SKSpriteNode!
-var piringTiga: SKSpriteNode!
-var satuKecil: SKSpriteNode!
-var satuSedang: SKSpriteNode!
-var satuBesar: SKSpriteNode!
-var duaKecil: SKSpriteNode!
-var duaSedang: SKSpriteNode!
-var duaBesar: SKSpriteNode!
-var tigaKecil: SKSpriteNode!
-var tigaSedang: SKSpriteNode!
-var tigaBesar: SKSpriteNode!
-var untouchableKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
-var untouchableSedang =  CGRect(x: 580, y: 50, width: 250, height: 250)
-let untouchableBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
-var targetKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
-let targetSedang = CGRect(x: 580, y: 50, width: 250, height: 250)
-let targetBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
-var pointKecil = CGPoint(x: 309, y: 160)
-var pointSedang = CGPoint(x: 642, y: 160)
-var pointBesar = CGPoint(x: 1008, y: 160)
-let initialKecil = CGPoint(x: 405, y: 510)
-let initialSedang = CGPoint(x: 648, y: 510)
-let initialBesar = CGPoint(x: 936, y: 510)
-var arrayKotak = [0,0,0]
-var fase = 1
+
 
 
 
 class SequenceStageThree: SKScene {
     
+    var boundary: SKSpriteNode!
+    var piringSatu: SKSpriteNode!
+    var piringDua: SKSpriteNode!
+    var piringTiga: SKSpriteNode!
+    var satuKecil: SKSpriteNode!
+    var satuSedang: SKSpriteNode!
+    var satuBesar: SKSpriteNode!
+    var duaKecil: SKSpriteNode!
+    var duaSedeng: SKSpriteNode!
+    var duaBeser: SKSpriteNode!
+    var tigaKecol: SKSpriteNode!
+    var tigaSedang: SKSpriteNode!
+    var tigaBesor: SKSpriteNode!
+    var untouchableKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
+    var untouchableSedang =  CGRect(x: 580, y: 50, width: 250, height: 250)
+    let untouchableBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
+    var targetKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
+    let targetSedang = CGRect(x: 580, y: 50, width: 250, height: 250)
+    let targetBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
+    var pointKecil = CGPoint(x: 309, y: 160)
+    var pointSedang = CGPoint(x: 642, y: 160)
+    var pointBesar = CGPoint(x: 1008, y: 160)
+    let initialKecil = CGPoint(x: 405, y: 510)
+    let initialSedang = CGPoint(x: 648, y: 510)
+    let initialBesar = CGPoint(x: 936, y: 510)
+    var arrayKotak = [0,0,0]
+    var fase = 1
     var empatKecil: SKSpriteNode!
     var empatSedang: SKSpriteNode!
     var empatBesar: SKSpriteNode!
-    var limaKecil: SKSpriteNode!
-    var limaSedang: SKSpriteNode!
-    var limaBesar: SKSpriteNode!
+    var limaKecul: SKSpriteNode!
+    var limaSedung: SKSpriteNode!
+    var limaBesur: SKSpriteNode!
+    var meja: SKSpriteNode!
     
    private var currentNode: SKNode?
     
     
     override func didMove(to view: SKView) {
         self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
-        duaKecil = childNode(withName: "duaKecil") as? SKSpriteNode
-        duaSedang = self.childNode(withName: "duaSedang") as? SKSpriteNode
-        duaBesar = self.childNode(withName: "duaBesar") as? SKSpriteNode
-        tigaKecil = self.childNode(withName: "tigaKecil") as? SKSpriteNode
+        boundary = self.childNode(withName: "boundary") as? SKSpriteNode
+        duaKecil = self.childNode(withName: "duaKecil") as? SKSpriteNode
+        duaSedeng = self.childNode(withName: "duaSedeng") as? SKSpriteNode
+        duaBeser = self.childNode(withName: "duaBeser") as? SKSpriteNode
+        tigaKecol = self.childNode(withName: "tigaKecol") as? SKSpriteNode
         tigaSedang = self.childNode(withName: "tigaSedang") as? SKSpriteNode
-        tigaBesar = self.childNode(withName: "tigaBesar") as? SKSpriteNode
+        tigaBesor = self.childNode(withName: "tigaBesor") as? SKSpriteNode
         empatKecil = self.childNode(withName: "empatKecil") as? SKSpriteNode
         empatSedang = self.childNode(withName: "empatSedang") as? SKSpriteNode
         empatBesar = self.childNode(withName: "empatBesar") as? SKSpriteNode
-        limaKecil = self.childNode(withName: "limaKecil") as? SKSpriteNode
-        limaSedang = self.childNode(withName: "limaSedang") as? SKSpriteNode
-        limaBesar = self.childNode(withName: "limaBesar") as? SKSpriteNode
+        limaKecul = self.childNode(withName: "limaKecul") as? SKSpriteNode
+        limaSedung = self.childNode(withName: "limaSedung") as? SKSpriteNode
+        limaBesur = self.childNode(withName: "limaBesur") as? SKSpriteNode
+        meja = self.childNode(withName: "meja") as? SKSpriteNode
+        
+        meja.zPosition = -1
+        
+        
         
         hideFase()
     }
@@ -123,49 +130,47 @@ class SequenceStageThree: SKScene {
         guard let node = self.currentNode else {return}
         
         if targetKecil.contains(node.position) {
-            if arrayKotak[0] == 0 && (node.name?.contains("Kecil"))!{
+            if arrayKotak[0] == 0 && ((node.name?.contains("Kecil"))! || (node.name?.contains("Kecol"))! || (node.name?.contains("Kecul"))!){
                 arrayKotak[0] = 1
                 node.run(SKAction.move(to: pointKecil, duration: 0.1))
                 
             } else{
-                if (node.name?.contains("Sedang"))!{
+                if (node.name?.contains("Sedang"))! || (node.name?.contains("Beser"))! || (node.name?.contains("Kecul"))!{
                     node.run(SKAction.move(to: initialSedang, duration: 0.1))
-                } else if (node.name?.contains("Besar"))!{
+                } else if (node.name?.contains("Besar"))! || (node.name?.contains("Sedeng"))! || (node.name?.contains("Sedung"))!{
                     node.run(SKAction.move(to: initialBesar, duration: 0.1))
                 }
             }
         } else if targetSedang.contains(node.position){
-            if arrayKotak[1] == 0 && (node.name?.contains("Sedang"))!{
+            if arrayKotak[1] == 0 && (node.name?.contains("Sedang"))! || (node.name?.contains("Sedeng"))! || (node.name?.contains("Sedung"))!{
                 arrayKotak[1] = 1
                 node.run(SKAction.move(to: pointSedang, duration: 0.1))
                 
             } else{
-                if (node.name?.contains("Kecil"))!{
+                if (node.name?.contains("Kecil"))! || (node.name?.contains("Besor"))! || (node.name?.contains("Besur"))!{
                     node.run(SKAction.move(to: initialKecil, duration: 0.1))
-                    node.isUserInteractionEnabled = false
-                    print(node.name!)
-                } else if (node.name?.contains("Besar"))!{
+                } else if (node.name?.contains("Besar"))! || (node.name?.contains("Sedeng"))! || (node.name?.contains("Sedung"))! || (node.name?.contains("Kecol"))!{
                     node.run(SKAction.move(to: initialBesar, duration: 0.1))
                 }
             }
         } else if targetBesar.contains(node.position){
-            if arrayKotak[2] == 0 && (node.name?.contains("Besar"))!{
+            if arrayKotak[2] == 0 && (node.name?.contains("Besar"))! || (node.name?.contains("Besor"))! || (node.name?.contains("Besur"))! || (node.name?.contains("Beser"))!{
                 arrayKotak[2] = 1
                 node.run(SKAction.move(to: pointBesar, duration: 0.1))
                 
             } else{
-                if (node.name?.contains("Kecil"))!{
+                if (node.name?.contains("Kecil"))! || (node.name?.contains("Besor"))! || (node.name?.contains("Besur"))!{
                     node.run(SKAction.move(to: initialKecil, duration: 0.1))
-                } else if (node.name?.contains("Sedang"))!{
+                } else if (node.name?.contains("Sedang"))! || (node.name?.contains("Beser"))! || (node.name?.contains("Kecul"))!{
                     node.run(SKAction.move(to: initialSedang, duration: 0.1))
                 }
             }
         } else{
-            if (node.name?.contains("Kecil"))!{
+            if (node.name?.contains("Kecil"))! || (node.name?.contains("Besor"))! || (node.name?.contains("Besur"))!{
                 node.run(SKAction.move(to: initialKecil, duration: 0.1))
-            } else if (node.name?.contains("Sedang"))!{
+            } else if (node.name?.contains("Sedang"))! || (node.name?.contains("Beser"))! || (node.name?.contains("Kecul"))!{
                 node.run(SKAction.move(to: initialSedang, duration: 0.1))
-            } else if (node.name?.contains("Besar"))!{
+            } else if (node.name?.contains("Besar"))! || (node.name?.contains("Sedeng"))! || (node.name?.contains("Sedung"))! || (node.name?.contains("Kecol"))!{
                 node.run(SKAction.move(to: initialBesar, duration: 0.1))
             }
         }
@@ -177,24 +182,25 @@ class SequenceStageThree: SKScene {
     
    func hideFase(){
         duaKecil.isHidden = true
-        duaSedang.isHidden = true
-        duaBesar.isHidden = true
-        tigaKecil.isHidden = true
+        duaSedeng.isHidden = true
+        duaBeser.isHidden = true
+        tigaKecol.isHidden = true
         tigaSedang.isHidden = true
-        tigaBesar.isHidden = true
+        tigaBesor.isHidden = true
         empatKecil.isHidden = true
         empatSedang.isHidden = true
         empatBesar.isHidden = true
-        limaKecil.isHidden = true
-        limaSedang.isHidden = true
-        limaBesar.isHidden = true
+        limaKecul.isHidden = true
+        limaSedung.isHidden = true
+        limaBesur.isHidden = true
         
     }
     
     func checkLogic(){
         if arrayKotak == [1,1,1]{
-            print("Mantap")
+            
             if fase == 1{
+                print(fase)
                 fase += 1
                 
                 pointKecil = CGPoint(x: 309, y: 190)
@@ -202,23 +208,25 @@ class SequenceStageThree: SKScene {
                 pointBesar = CGPoint(x: 1008, y: 190)
                 
                 duaKecil.isHidden = false
-                duaSedang.isHidden = false
-                duaBesar.isHidden = false
+                duaSedeng.isHidden = false
+                duaBeser.isHidden = false
                 
                 arrayKotak = [0,0,0]
             } else if fase == 2{
+                print(fase)
                 fase += 1
                 
                 pointKecil = CGPoint(x: 309, y: 220)
                 pointSedang = CGPoint(x: 642, y: 220)
                 pointBesar = CGPoint(x: 1008, y: 220)
                 
-                tigaKecil.isHidden = false
+                tigaKecol.isHidden = false
                 tigaSedang.isHidden = false
-                tigaBesar.isHidden = false
+                tigaBesor.isHidden = false
                 
                 arrayKotak = [0,0,0]
             } else if fase == 3{
+                print(fase)
                 fase += 1
                 
                 pointKecil = CGPoint(x: 309, y: 250)
@@ -231,15 +239,16 @@ class SequenceStageThree: SKScene {
                 
                 arrayKotak = [0,0,0]
             } else if fase == 4{
+                print(fase)
                 fase += 1
                 
                 pointKecil = CGPoint(x: 309, y: 280)
                 pointSedang = CGPoint(x: 642, y: 280)
                 pointBesar = CGPoint(x: 1008, y: 280)
                 
-                limaKecil.isHidden = false
-                limaSedang.isHidden = false
-                limaBesar.isHidden = false
+                limaKecul.isHidden = false
+                limaSedung.isHidden = false
+                limaBesur.isHidden = false
                 
                 arrayKotak = [0,0,0]
             } else if fase == 5{

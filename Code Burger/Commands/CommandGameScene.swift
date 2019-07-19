@@ -15,12 +15,62 @@ enum CraneCommand {
     case down
 }
 
+struct CommandStage {
+    var stageNum = 0
+    var home = CGPoint.zero
+    var numBars = 3
+    var barDistance = 100
+    var burgerPosition = 2
+    var targetPosition = 3
+}
+
+// Stage Data
+
+let stage4 = CommandStage(stageNum: 4,
+                          home: CGPoint(x:570, y:600),
+                          numBars: 3,
+                          barDistance: 130,
+                          burgerPosition: 1,
+                          targetPosition: 2)
+
+let stage5 = CommandStage(stageNum: 5,
+                          home: CGPoint(x:520, y:600),
+                          numBars: 4,
+                          barDistance: 110,
+                          burgerPosition: 0,
+                          targetPosition: 3)
+
+let stage6 = CommandStage(stageNum: 6,
+                          home: CGPoint(x:500, y:600),
+                          numBars: 5,
+                          barDistance: 110,
+                          burgerPosition: 1,
+                          targetPosition: 4)
+
+let stage7 = CommandStage(stageNum: 7,
+                          home: CGPoint(x:500, y:600),
+                          numBars: 5,
+                          barDistance: 110,
+                          burgerPosition: 2,
+                          targetPosition: 4)
+
 class CommandGameScene: SKScene {
+    
+    private var currStage = stage4
     
     // Objects
     
+    private var stage : SKSpriteNode?
     private var catcher : SKSpriteNode?
     private var burger: SKSpriteNode?
+    
+    // Popups
+    
+    private var doneBg : SKSpriteNode?
+    private var donePopup : SKSpriteNode?
+    private var btnStageNext : SKSpriteNode?
+    private var btnStageMenu : SKSpriteNode?
+    private var btnStageRestart : SKSpriteNode?
     
     // Buttons
     
@@ -33,12 +83,11 @@ class CommandGameScene: SKScene {
     
     // Actions
     
-    private var actionLeft = SKAction.moveBy(x: -90, y: 0, duration: 0.2)
-    private var actionRight = SKAction.moveBy(x: 90, y: 0, duration: 0.2)
+    private var actionLeft = SKAction.moveBy(x: -100, y: 0, duration: 0.2)
+    private var actionRight = SKAction.moveBy(x: 100, y: 0, duration: 0.2)
     private var actionDown = SKAction.moveBy(x: 0, y: -200, duration: 0.2)
     private var actionUp = SKAction.moveBy(x: 0, y: 200, duration: 0.2)
-    private var actionHome = SKAction.move(to: CGPoint(x: 480, y: 600), duration: 1.0)
-    private var actionTarget = SKAction.move(to: CGPoint(x: 930, y: 600), duration: 1.0)
+    private var actionHome = SKAction.move(to: CGPoint(x:500, y:600), duration: 1.0)
     private var actionLeftHalf = SKAction.moveBy(x: -30, y: 0, duration: 0.1)
     private var actionRightHalf = SKAction.moveBy(x: 30, y: 0, duration: 0.1)
     private var wait = SKAction.wait(forDuration: 0.5)
@@ -70,17 +119,19 @@ class CommandGameScene: SKScene {
     private var commands: [CraneCommand] = []
     private var commandNodes: [SKSpriteNode] = []
     
-    let burgerPosition = 2
-    let targetPosition = 5
-    
     var isGoing = false
     var isBurgerAcquired = false
     var isBurgerDelivered = false
     
     override func didMove(to view: SKView) {
         
+        self.stage = self.childNode(withName: "//cmd-stage") as? SKSpriteNode
+        
         self.catcher = self.childNode(withName: "//catcher") as? SKSpriteNode
-        self.burger = self.childNode(withName: "//burger") as? SKSpriteNode
+        self.catcher?.zPosition = 3
+        
+        self.burger = self.childNode(withName: "//cmd-burger") as? SKSpriteNode
+        self.burger?.zPosition = 4
         
         self.btnBack = self.childNode(withName: "//btn-back") as? SKSpriteNode
         self.btnLeft = self.childNode(withName: "//btn-left") as? SKSpriteNode
@@ -88,7 +139,39 @@ class CommandGameScene: SKScene {
         self.btnDown = self.childNode(withName: "//btn-down") as? SKSpriteNode
         self.btnGo = self.childNode(withName: "//btn-go") as? SKSpriteNode
         self.btnClear = self.childNode(withName: "//btn-clear") as? SKSpriteNode
+     
+        self.doneBg = self.childNode(withName: "//cmd-done-bg") as? SKSpriteNode
+        self.donePopup = self.childNode(withName: "//cmd-done-popup") as? SKSpriteNode
+        self.btnStageNext = self.childNode(withName: "//cmd-stage-next") as? SKSpriteNode
+        self.btnStageMenu = self.childNode(withName: "//cmd-stage-menu") as? SKSpriteNode
+        self.btnStageRestart = self.childNode(withName: "//cmd-stage-restart") as? SKSpriteNode
         
+        loadStage()
+        
+    }
+    
+    func loadStage() {
+        
+        self.stage?.texture = SKTexture(imageNamed: "cmd-stage-\(self.currStage.numBars)")
+        self.catcher?.position = self.currStage.home
+        self.catcher?.zPosition = 3
+        
+        self.actionHome = SKAction.move(to: self.currStage.home, duration: 1.0)
+        
+        let x = Int(self.currStage.home.x) + self.currStage.burgerPosition*self.currStage.barDistance
+        self.burger?.position = CGPoint(x:x, y:360)
+        self.burger?.zPosition = 4
+
+        self.actionLeft = SKAction.moveBy(x: 0-CGFloat(self.currStage.barDistance), y: 0, duration: 0.2)
+        self.actionRight = SKAction.moveBy(x: CGFloat(self.currStage.barDistance), y: 0, duration: 0.2)
+        
+        self.commands.removeAll()
+        self.removeCommandNodes()
+        self.catcher?.removeAllActions()
+        
+        self.isGoing = false
+        self.isBurgerAcquired = false
+        self.isBurgerDelivered = false
     }
     
     // MARK: - Handle Touches
@@ -123,6 +206,35 @@ class CommandGameScene: SKScene {
         } else if node == self.btnClear {
             print("btnClear")
             clearAll()
+        } else if node == self.btnStageNext {
+            print("btnStageNext")
+            if currStage.stageNum == 4 {
+                currStage = stage5
+                loadStage()
+                hideDonePopup()
+            } else if currStage.stageNum == 5 {
+                currStage = stage6
+                loadStage()
+                hideDonePopup()
+            } else if currStage.stageNum == 6 {                
+                currStage = stage7
+                loadStage()
+                hideDonePopup()
+            } else if currStage.stageNum == 7 {
+                // go to next game (Maze)
+            }
+        } else if node == self.btnStageMenu {
+            print("btnStageMenu")
+            // go to menu
+        } else if node == self.btnStageRestart {
+            print("btnStageRestart")
+            loadStage()
+            hideDonePopup()
+        } else if node == self.btnBack {
+            print("btnBack")
+            // go to menu
+            // for testing: show done popup
+            showDonePopup()
         } else {
             // tap command nodes to remove
             var shiftUp = false
@@ -183,11 +295,6 @@ class CommandGameScene: SKScene {
         commandNodes.removeAll()
     }
     
-    func clear() {
-        commandNodes.removeAll()
-        commands.removeAll()
-    }
-        
     func go() {
         
         if isGoing == true {
@@ -215,7 +322,7 @@ class CommandGameScene: SKScene {
                 actions.append(wait)
             case .right:
                 actions.append(soundMove)
-                let canGoRight = catcherPosition < targetPosition
+                let canGoRight = catcherPosition < self.currStage.numBars-1
                 if canGoRight == false {
                     actions.append(actionRightHalf)
                     actions.append(actionLeftHalf)
@@ -228,22 +335,24 @@ class CommandGameScene: SKScene {
                 actions.append(soundCatch)
                 actions.append(actionDown)
                 actions.append(wait)
-                if catcherPosition == burgerPosition && isBurgerAcquired == false {
+                if catcherPosition == self.currStage.burgerPosition && isBurgerAcquired == false {
                     actions.append(animatePickUp)
                     let pickupAction = SKAction.customAction(withDuration: 0.5) { (node, elapsedTime) in
                         self.burger?.removeFromParent()
-                        self.burger = SKSpriteNode(imageNamed: "burger")
+                        self.burger = SKSpriteNode(imageNamed: "cmd-burger")
                         self.burger?.position = CGPoint(x:0, y:-20)
+                        self.burger?.zPosition = 4
                         self.catcher?.addChild(self.burger!)
                     }
                     actions.append(pickupAction)
                     isBurgerAcquired = true
-                } else if catcherPosition == targetPosition && isBurgerAcquired == true {
+                } else if catcherPosition == self.currStage.targetPosition && isBurgerAcquired == true {
                     actions.append(animateDropOff)
                     let dropOffAction = SKAction.customAction(withDuration: 0.5) { (node, elapsedTime) in
                         self.burger?.removeFromParent()
-                        self.burger = SKSpriteNode(imageNamed: "burger")
-                        self.burger?.position = CGPoint(x:930, y:360)
+                        self.burger = SKSpriteNode(imageNamed: "cmd-burger")
+                        let x = Int(self.currStage.home.x) + self.currStage.targetPosition*self.currStage.barDistance
+                        self.burger?.position = CGPoint(x:x, y:360)
                         self.burger?.zPosition = 4
                         self.addChild(self.burger!)
                     }
@@ -256,28 +365,66 @@ class CommandGameScene: SKScene {
             }
         }
         catcher?.run(SKAction.sequence(actions), completion: {
-            // Go Home
-            self.catcher?.run(self.actionHome, completion: {
+            if self.isBurgerDelivered {
+                // Success! Show Done Popup
                 self.isGoing = false
                 self.isBurgerAcquired = false
                 self.isBurgerDelivered = false
-                // Reset Catcher
-                self.catcher?.texture = self.textureCatcher
-                // Reset Burger
-                self.burger?.removeFromParent()
-                self.burger = SKSpriteNode(imageNamed: "burger")
-                self.burger?.position = CGPoint(x:660, y:360)
-                self.burger?.zPosition = 4
-                self.addChild(self.burger!)
-            })
+                self.showDonePopup()
+            } else {
+                // Fail! Go Home
+                self.catcher?.run(self.actionHome, completion: {
+                    self.isGoing = false
+                    self.isBurgerAcquired = false
+                    self.isBurgerDelivered = false
+                    // Reset Catcher
+                    self.catcher?.texture = self.textureCatcher
+                    // Reset Burger
+                    self.burger?.removeFromParent()
+                    self.burger = SKSpriteNode(imageNamed: "cmd-burger")
+                    let x = Int(self.currStage.home.x) + self.currStage.burgerPosition*self.currStage.barDistance
+                    self.burger?.position = CGPoint(x:x, y:360)
+                    self.burger?.zPosition = 4
+                    self.addChild(self.burger!)
+                })
+            }
         })
     }
     
     func clearAll() {
         commands.removeAll()
         removeCommandNodes()
-        catcher?.run(actionHome)
+        catcher?.removeAllActions()
+        // Go Home
+        self.catcher?.run(self.actionHome, completion: {
+            self.isGoing = false
+            self.isBurgerAcquired = false
+            self.isBurgerDelivered = false
+            // Reset Catcher
+            self.catcher?.texture = self.textureCatcher
+            // Reset Burger
+            self.burger?.removeFromParent()
+            self.burger = SKSpriteNode(imageNamed: "cmd-burger")
+            let x = Int(self.currStage.home.x) + self.currStage.burgerPosition*self.currStage.barDistance
+            self.burger?.position = CGPoint(x:x, y:360)
+            self.burger?.zPosition = 4
+            self.addChild(self.burger!)
+        })
     }
+    
+    // MARK: - Done Popup
+    
+    func hideDonePopup() {
+        print(#function)
+        doneBg?.removeFromParent()
+    }
+    
+    func showDonePopup() {
+        print(#function)
+        addChild(doneBg!)
+        doneBg?.zPosition = 5
+    }
+    
     
     // MARK: - Touch Listener
     

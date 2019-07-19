@@ -13,8 +13,6 @@
 		5E72281E22E1715300C03477 /* SequenceStageTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E72281D22E1715300C03477 /* SequenceStageTwo.sks */; };
 		881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C2E5022DDC2B2006610D9 /* Main.storyboard */; };
 		8855A72722DF35A000D216B8 /* StageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72622DF35A000D216B8 /* StageProtocols.swift */; };
-		8855A72922DF607100D216B8 /* MazeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72822DF607100D216B8 /* MazeGameViewController.swift */; };
-		B564FA4F22DF28D50063765B /* MazeStage.sks in Resources */ = {isa = PBXBuildFile; fileRef = B564FA3622DF28D50063765B /* MazeStage.sks */; };
 		B564FA5022DF28D50063765B /* MazeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3722DF28D50063765B /* MazeStage.swift */; };
 		B564FA5122DF28D50063765B /* CharacterSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3922DF28D50063765B /* CharacterSelect.swift */; };
 		B564FA5222DF28D50063765B /* StageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3B22DF28D50063765B /* StageTableCell.swift */; };
@@ -37,10 +35,11 @@
 		BEA7125122D32B65009F4F5E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7125022D32B65009F4F5E /* GameViewController.swift */; };
 		BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7125522D32B66009F4F5E /* Assets.xcassets */; };
 		BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7125722D32B66009F4F5E /* LaunchScreen.storyboard */; };
-		BEED959222E0538300B49DDE /* MazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED959122E0538300B49DDE /* MazeViewController.swift */; };
 		BEED959822E08A8100B49DDE /* MazeStage3.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEED959522E08A8100B49DDE /* MazeStage3.sks */; };
 		BEED959922E08A8100B49DDE /* MazeStage4.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEED959622E08A8100B49DDE /* MazeStage4.sks */; };
 		BEED959A22E08A8100B49DDE /* MazeStage2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEED959722E08A8100B49DDE /* MazeStage2.sks */; };
+		BEED959D22E1B76300B49DDE /* MazeStage1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEED959C22E1B76300B49DDE /* MazeStage1.sks */; };
+		BEED95A322E1B85C00B49DDE /* MazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED95A222E1B85C00B49DDE /* MazeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +49,6 @@
 		5E72281D22E1715300C03477 /* SequenceStageTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStageTwo.sks; sourceTree = "<group>"; };
 		881C2E5022DDC2B2006610D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8855A72622DF35A000D216B8 /* StageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageProtocols.swift; sourceTree = "<group>"; };
-		8855A72822DF607100D216B8 /* MazeGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeGameViewController.swift; sourceTree = "<group>"; };
-		B564FA3622DF28D50063765B /* MazeStage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeStage.sks; sourceTree = "<group>"; };
 		B564FA3722DF28D50063765B /* MazeStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeStage.swift; sourceTree = "<group>"; };
 		B564FA3922DF28D50063765B /* CharacterSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelect.swift; sourceTree = "<group>"; };
 		B564FA3B22DF28D50063765B /* StageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageTableCell.swift; sourceTree = "<group>"; };
@@ -76,10 +73,11 @@
 		BEA7125522D32B66009F4F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA7125822D32B66009F4F5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA7125A22D32B66009F4F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEED959122E0538300B49DDE /* MazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewController.swift; sourceTree = "<group>"; };
 		BEED959522E08A8100B49DDE /* MazeStage3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeStage3.sks; sourceTree = "<group>"; };
 		BEED959622E08A8100B49DDE /* MazeStage4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeStage4.sks; sourceTree = "<group>"; };
 		BEED959722E08A8100B49DDE /* MazeStage2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeStage2.sks; sourceTree = "<group>"; };
+		BEED959C22E1B76300B49DDE /* MazeStage1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeStage1.sks; sourceTree = "<group>"; };
+		BEED95A222E1B85C00B49DDE /* MazeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +94,12 @@
 		B564FA3522DF28D50063765B /* Maze */ = {
 			isa = PBXGroup;
 			children = (
-				B564FA3622DF28D50063765B /* MazeStage1.sks */,
+				BEED959C22E1B76300B49DDE /* MazeStage1.sks */,
 				BEED959722E08A8100B49DDE /* MazeStage2.sks */,
 				BEED959522E08A8100B49DDE /* MazeStage3.sks */,
 				BEED959622E08A8100B49DDE /* MazeStage4.sks */,
 				B564FA3722DF28D50063765B /* MazeStage.swift */,
-				8855A72822DF607100D216B8 /* MazeGameViewController.swift */,
+				BEED95A222E1B85C00B49DDE /* MazeViewController.swift */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -268,10 +266,10 @@
 				881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */,
 				B564FA6922DF28F90063765B /* backsound.mp3 in Resources */,
 				BEED959922E08A8100B49DDE /* MazeStage4.sks in Resources */,
+				BEED959D22E1B76300B49DDE /* MazeStage1.sks in Resources */,
 				BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */,
 				BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */,
 				B564FA5F22DF28D50063765B /* CommandGameScene.sks in Resources */,
-				B564FA4F22DF28D50063765B /* MazeStage1.sks in Resources */,
 				BEED959A22E08A8100B49DDE /* MazeStage2.sks in Resources */,
 				B564FA6A22DF28F90063765B /* Hydraulics Engaged.caf in Resources */,
 				B564FA5422DF28D50063765B /* StageTableViewCell.xib in Resources */,
@@ -297,7 +295,6 @@
 				B564FA6022DF28D50063765B /* CommandGameViewController.swift in Sources */,
 				B564FA5522DF28D50063765B /* GameRoomTableView.swift in Sources */,
 				B564FA5122DF28D50063765B /* CharacterSelect.swift in Sources */,
-				8855A72922DF607100D216B8 /* MazeGameViewController.swift in Sources */,
 				B564FA5322DF28D50063765B /* StageSelect.swift in Sources */,
 				8855A72722DF35A000D216B8 /* StageProtocols.swift in Sources */,
 				B564FA5622DF28D50063765B /* Start.swift in Sources */,
@@ -307,7 +304,7 @@
 				B564FA6122DF28D50063765B /* CommandGameScene.swift in Sources */,
 				BEA7125122D32B65009F4F5E /* GameViewController.swift in Sources */,
 				BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */,
-				BEED959222E0538300B49DDE /* MazeViewController.swift in Sources */,
+				BEED95A322E1B85C00B49DDE /* MazeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

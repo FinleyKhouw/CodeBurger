@@ -19,11 +19,7 @@ enum WallPlacement {
 
 class MazeStage: SKScene {
     
-    var TextureAtlas = SKTextureAtlas()
-    var TextureArray = [SKTexture]()
-    
     var character = SKSpriteNode()
-    var characterWalk = SKSpriteNode()
     
     var playButton = SKSpriteNode()
     var backButton = SKSpriteNode()

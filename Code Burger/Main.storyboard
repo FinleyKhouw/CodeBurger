@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hti-Wm-bJa">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="814" y="1520"/>
         </scene>
-        <!--Maze Game Controller-->
+        <!--Maze View Controller-->
         <scene sceneID="UpX-fY-qLm">
             <objects>
-                <viewController storyboardIdentifier="mazeStage" id="hti-Wm-bJa" customClass="MazeGameController" customModule="Code_Burger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mazeStage" id="hti-Wm-bJa" customClass="MazeViewController" customModule="Code_Burger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="W33-qX-HVG" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

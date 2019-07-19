@@ -149,8 +149,10 @@ class SequenceStageThree: SKScene {
             } else{
                 if (node.name?.contains("Kecil"))! || (node.name?.contains("Besor"))! || (node.name?.contains("Besur"))!{
                     node.run(SKAction.move(to: initialKecil, duration: 0.1))
-                } else if (node.name?.contains("Besar"))! || (node.name?.contains("Sedeng"))! || (node.name?.contains("Sedung"))! || (node.name?.contains("Kecol"))!{
+                } else if (node.name?.contains("Besar"))! || (node.name?.contains("Sedung"))! || (node.name?.contains("Kecol"))!{
                     node.run(SKAction.move(to: initialBesar, duration: 0.1))
+                } else{
+                    node.run(SKAction.move(to: initialSedang, duration: 0.1))
                 }
             }
         } else if targetBesar.contains(node.position){
@@ -163,6 +165,8 @@ class SequenceStageThree: SKScene {
                     node.run(SKAction.move(to: initialKecil, duration: 0.1))
                 } else if (node.name?.contains("Sedang"))! || (node.name?.contains("Beser"))! || (node.name?.contains("Kecul"))!{
                     node.run(SKAction.move(to: initialSedang, duration: 0.1))
+                } else{
+                    node.run(SKAction.move(to: initialBesar, duration: 0.1))
                 }
             }
         } else{
@@ -203,9 +207,9 @@ class SequenceStageThree: SKScene {
                 print(fase)
                 fase += 1
                 
-                pointKecil = CGPoint(x: 309, y: 190)
-                pointSedang = CGPoint(x: 642, y: 190)
-                pointBesar = CGPoint(x: 1008, y: 190)
+                pointKecil = CGPoint(x: 309, y: 170)
+                pointSedang = CGPoint(x: 642, y: 170)
+                pointBesar = CGPoint(x: 1008, y: 170)
                 
                 duaKecil.isHidden = false
                 duaSedeng.isHidden = false
@@ -216,9 +220,9 @@ class SequenceStageThree: SKScene {
                 print(fase)
                 fase += 1
                 
-                pointKecil = CGPoint(x: 309, y: 220)
-                pointSedang = CGPoint(x: 642, y: 220)
-                pointBesar = CGPoint(x: 1008, y: 220)
+                pointKecil = CGPoint(x: 309, y: 200)
+                pointSedang = CGPoint(x: 642, y: 200)
+                pointBesar = CGPoint(x: 1008, y: 200)
                 
                 tigaKecol.isHidden = false
                 tigaSedang.isHidden = false
@@ -229,9 +233,9 @@ class SequenceStageThree: SKScene {
                 print(fase)
                 fase += 1
                 
-                pointKecil = CGPoint(x: 309, y: 250)
-                pointSedang = CGPoint(x: 642, y: 250)
-                pointBesar = CGPoint(x: 1008, y: 250)
+                pointKecil = CGPoint(x: 309, y: 210)
+                pointSedang = CGPoint(x: 642, y: 210)
+                pointBesar = CGPoint(x: 1008, y: 210)
                 
                 empatKecil.isHidden = false
                 empatSedang.isHidden = false
@@ -242,9 +246,9 @@ class SequenceStageThree: SKScene {
                 print(fase)
                 fase += 1
                 
-                pointKecil = CGPoint(x: 309, y: 280)
-                pointSedang = CGPoint(x: 642, y: 280)
-                pointBesar = CGPoint(x: 1008, y: 280)
+                pointKecil = CGPoint(x: 309, y: 230)
+                pointSedang = CGPoint(x: 642, y: 230)
+                pointBesar = CGPoint(x: 1008, y: 230)
                 
                 limaKecul.isHidden = false
                 limaSedung.isHidden = false

@@ -11,6 +11,7 @@ import UIKit
 class GameRoomTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     weak var stageProtocols: StageProtocols?
+    var userDef = UserDefaults.standard
     
     var items: [String] = ["Stage 1", "Stage 2", "Stage 3"]
     var imageStage: [UIImage] = [UIImage(named: "a")!, UIImage(named: "b")!, UIImage(named: "c")!]
@@ -19,6 +20,8 @@ class GameRoomTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
+        
+        rowHeight = 275
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,7 +43,10 @@ class GameRoomTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "stageCell", for: indexPath) as! StageTableCell
         cell.lblStage?.text = self.items[indexPath.row]
         cell.imgStage?.image = self.imageStage[indexPath.row]
-//        cell.imgLock?.image = self.imageLock[indexPath.row]
+        if userDef.integer(forKey: "stageIndex") < indexPath.row {
+            cell.imgStage.isHidden = true
+            cell.imgLock?.image = self.imageLock[indexPath.row]
+        }
         return cell
     }
     

@@ -18,6 +18,7 @@ class StageSelect: SKScene {
     
     var stageTableView = GameRoomTableView()
     let backButton = SKSpriteNode(imageNamed: "backbutton")
+    
     let userDef = UserDefaults.standard
     
     override func didMove(to view: SKView) {
@@ -81,10 +82,14 @@ extension StageSelect : StageProtocols {
     
     func moveScene(_ indexPath: IndexPath) {
         if self.view != nil {
-            if let indexPath = responseMessages[indexPath.row] {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let sequenceController = storyBoard.instantiateViewController(withIdentifier: indexPath)
-            self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
+            if userDef.integer(forKey: "stageIndex") >= indexPath.row {
+                if let identifier = responseMessages[indexPath.row] {
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let sequenceController = storyBoard.instantiateViewController(withIdentifier: identifier)
+                    self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
+                }
+            } else {
+                // U Cant enter this stage. Finish it first
             }
         }
     }

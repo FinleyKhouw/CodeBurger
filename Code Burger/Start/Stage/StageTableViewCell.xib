@@ -11,45 +11,36 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stageCell" rowHeight="275" id="7X3-nC-sqE" customClass="StageTableCell" customModule="Code_Burger" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="550" height="275"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stageCell" rowHeight="157" id="7X3-nC-sqE" customClass="StageTableCell" customModule="Code_Burger" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="550" height="157"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7X3-nC-sqE" id="MUq-qz-SOK">
-                <rect key="frame" x="0.0" y="0.0" width="550" height="274.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7X3-nC-sqE" id="MUq-qz-SOK">
+                <rect key="frame" x="0.0" y="0.0" width="550" height="156.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="frD-PZ-prS">
-                        <rect key="frame" x="0.0" y="0.0" width="550" height="275.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="275" id="fVc-Iw-1s5"/>
-                            <constraint firstAttribute="width" constant="550" id="n8s-1M-e9H"/>
-                        </constraints>
-                    </imageView>
-                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-2Z-6Uv">
-                        <rect key="frame" x="250" y="106.5" width="50" height="50"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frD-PZ-prS">
+                        <rect key="frame" x="-2" y="-49" width="554" height="277"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKo-4Q-mNK">
-                        <rect key="frame" x="20" y="243" width="510" height="21"/>
+                        <rect key="frame" x="254" y="243.5" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-2Z-6Uv">
+                        <rect key="frame" x="438" y="64" width="50" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="frD-PZ-prS" secondAttribute="bottom" id="5Mo-uf-wss"/>
-                    <constraint firstItem="frD-PZ-prS" firstAttribute="leading" secondItem="MUq-qz-SOK" secondAttribute="leading" id="8y3-Yy-2BS"/>
-                    <constraint firstAttribute="trailing" secondItem="frD-PZ-prS" secondAttribute="trailing" id="qW7-E3-s2l"/>
-                    <constraint firstItem="frD-PZ-prS" firstAttribute="top" secondItem="MUq-qz-SOK" secondAttribute="top" id="zrU-sZ-Yae"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imgLock" destination="frD-PZ-prS" id="PsM-my-eyf"/>
-                <outlet property="imgStage" destination="frD-PZ-prS" id="Iye-U3-dx5"/>
+                <outlet property="imgLock" destination="OCM-2Z-6Uv" id="yfk-GG-T5O"/>
+                <outlet property="imgStage" destination="frD-PZ-prS" id="4to-oA-mRC"/>
                 <outlet property="lblStage" destination="sKo-4Q-mNK" id="G5P-tf-ezd"/>
             </connections>
-            <point key="canvasLocation" x="-1170.5035971223022" y="19.694244604316548"/>
+            <point key="canvasLocation" x="-1170.5035971223022" y="-12.140287769784173"/>
         </tableViewCell>
     </objects>
 </document>

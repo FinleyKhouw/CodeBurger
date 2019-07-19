@@ -10,9 +10,8 @@ import SpriteKit
 import GameplayKit
 
 class Start: SKScene {
-    let burger = SKSpriteNode(imageNamed: "burger")
     let playButton = SKSpriteNode(imageNamed: "play")
-    let stageButton = SKSpriteNode(imageNamed: "stage-select")
+    let stageButton = SKSpriteNode(imageNamed: "menu")
     
     let pausePage = SKSpriteNode(imageNamed: "pausepage")
     let userDef = UserDefaults.standard
@@ -30,11 +29,8 @@ class Start: SKScene {
     }
     
     func setView() {
-        burger.position = CGPoint(x: size.width/2, y: size.height/2)
-        addChild(burger)
-        
-        playButton.size = CGSize(width: 100, height: 100)
-        playButton.position = CGPoint(x: size.width/2, y: size.height/4)
+        playButton.size = CGSize(width: 200, height: 200)
+        playButton.position = CGPoint(x: size.width/2, y: size.height/2)
         playButton.name = "playButton"
         addChild(playButton)
         
@@ -88,45 +84,6 @@ class Start: SKScene {
                     } else {
                         
                     }
-                }
-            } else if touchedNode == burger {
-                if let view = self.view {
-                    // Create an effects node with a gaussian blur filter
-                    let effectsNode = SKEffectNode()
-                    let filter = CIFilter(name: "CIGaussianBlur")
-                    // Set the blur amount. Adjust this to achieve the desired effect
-                    let blurAmount = 10.0
-                    filter?.setValue(blurAmount, forKey: kCIInputRadiusKey)
-                    
-                    effectsNode.filter = filter
-                    effectsNode.position = self.view!.center
-                    effectsNode.blendMode = .alpha
-                    
-                    // Create a sprite
-                    let texture = SKTexture(imageNamed: "Spaceship")
-                    let sprite = SKSpriteNode(texture: texture)
-                    
-                    // Add the sprite to the effects node. Nodes added to the effects node
-                    // will be blurred
-                    effectsNode.addChild(sprite)
-                    // Add the effects node to the scene
-                    self.addChild(effectsNode)
-                    
-                    // Create another sprite
-                    let sprite2 = SKSpriteNode(texture: texture)
-                    sprite2.position = self.view!.center
-                    sprite2.size = CGSize(width:64, height:64);
-                    sprite2.zPosition = 100
-                    
-                    // Add the sprite to the scene. Nodes added to the scene won't be blurred
-                    self.addChild(sprite2)
-                    
-                    
-                    pausePage.zPosition = 2
-                    pausePage.size = CGSize(width: 400, height: 400)
-                    pausePage.position = CGPoint(x: size.width/2, y: size.height/2)
-                    addChild(pausePage)
-                
                 }
             }
         }

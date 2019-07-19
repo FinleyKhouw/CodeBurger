@@ -15,15 +15,17 @@ class GameViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     let userDef = UserDefaults.standard
-    let stage: [Int] = [1,2,3,4,5,6,7,8,9]
-    let stageStatus: [Bool] = [false, false, false,false,false,false,false,false,false]
+
+    var hasCharacter = false
+    var selectedCharacter: String = "MALE"
+    var stageIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let audioSound = Bundle.main.path(forResource: "backsound", ofType: "mp3")
-        userDef.set(stage, forKey: "stageArray")
-        userDef.set(stageStatus, forKey: "stageStatus")
+        
+        // Save Stage Data if data is nil so save it
+        getData()
         
         if (self.view as! SKView?) != nil {
             // Load the SKScene from 'GameScene.sks'
@@ -44,6 +46,20 @@ class GameViewController: UIViewController {
             }
         }
     }
+    
+    func getData() {
+        if userDef.bool(forKey: "hasCharacter") == nil {
+            userDef.set(hasCharacter, forKey: "hasCharacter")
+        }
+        
+        if userDef.string(forKey: "selectedCharacter") == nil {
+            userDef.set(selectedCharacter, forKey: "selectedCharacter")
+        }
+        
+        if userDef.integer(forKey: "stageIndex") == nil {
+            userDef.set(stageIndex, forKey: "stageIndex")
+        }
+    }
 
     override var shouldAutorotate: Bool {
         return true
@@ -61,3 +77,4 @@ class GameViewController: UIViewController {
         return true
     }
 }
+

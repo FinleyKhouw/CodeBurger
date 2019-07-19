@@ -14,8 +14,8 @@ class GameRoomTableView: UITableView, UITableViewDelegate, UITableViewDataSource
     var userDef = UserDefaults.standard
     
     var items: [String] = ["Stage 1", "Stage 2", "Stage 3"]
-    var imageStage: [UIImage] = [UIImage(named: "a")!, UIImage(named: "b")!, UIImage(named: "c")!]
-    var imageLock: [UIImage] = [UIImage(named: "lock")!, UIImage(named: "lock")!, UIImage(named: "lock")!]
+    var imageStage: [UIImage] = [UIImage(named: "exstage")!, UIImage(named: "exstage")!, UIImage(named: "exstage")!, UIImage(named: "4stage")!, UIImage(named: "5stage")!, UIImage(named: "6stage")!, UIImage(named: "7stage")!, UIImage(named: "8stage")!, UIImage(named: "9stage")!, UIImage(named: "10stage")!, UIImage(named: "11stage")!]
+    var imageLock: [UIImage] = [UIImage(named: "lock")!, UIImage(named: "lock")!, UIImage(named: "lock")!,UIImage(named: "lock")!, UIImage(named: "lock")!, UIImage(named: "lock")!, UIImage(named: "lock")!, UIImage(named: "lock")!, UIImage(named: "lock")!, UIImage(named: "lock")!, UIImage(named: "lock")!]
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         self.delegate = self
@@ -37,16 +37,16 @@ class GameRoomTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return imageStage.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stageCell", for: indexPath) as! StageTableCell
-        cell.lblStage?.text = self.items[indexPath.row]
+//        cell.lblStage?.text = self.items[indexPath.row]
         cell.imgStage?.image = self.imageStage[indexPath.row]
-        if userDef.integer(forKey: "stageIndex") < indexPath.row {
-            cell.imgStage.isHidden = true
-            cell.imgLock?.image = self.imageLock[indexPath.row]
-        }
+//        if userDef.integer(forKey: "stageIndex") < indexPath.row {
+//            cell.imgStage.isHidden = true
+//            cell.imgLock?.image = self.imageLock[indexPath.row]
+//        }
         return cell
     }
     

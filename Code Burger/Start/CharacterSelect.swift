@@ -12,9 +12,9 @@ import UIKit
 
 class CharacterSelect: SKScene {
     
-    let maleCharacter = SKSpriteNode(imageNamed: "av-male")
-    let femaleCharacter = SKSpriteNode(imageNamed: "av-female")
-    let backButton = SKSpriteNode(imageNamed: "backbutton")
+    let maleCharacter = SKSpriteNode(imageNamed: "Boy Char")
+    let femaleCharacter = SKSpriteNode(imageNamed: "Girl")
+    let backButton = SKSpriteNode(imageNamed: "back")
     let playButton = SKSpriteNode(imageNamed: "play")
     var characterIsSelected: Bool = false
     let userDef = UserDefaults.standard
@@ -74,7 +74,6 @@ class CharacterSelect: SKScene {
                 let fadeOut = SKAction.scale(to: 0.8, duration: 0.5)
                 let sequence = SKAction.sequence([fadeIn, fadeNormal, fadeOut])
                 let repeatAnimation = SKAction.repeatForever(sequence)
-                userDef.set(true, forKey: "hasCharacter")
                 maleCharacter.run(repeatAnimation)
                 femaleCharacter.removeAllActions()
             } else if touchedNode == femaleCharacter {
@@ -84,7 +83,6 @@ class CharacterSelect: SKScene {
                 let fadeOut = SKAction.scale(to: 0.8, duration: 0.50)
                 let sequence = SKAction.sequence([fadeIn, fadeNormal, fadeOut])
                 let repeatAnimation = SKAction.repeatForever(sequence)
-                userDef.set(true, forKey: "hasCharacter")
                 femaleCharacter.run(repeatAnimation)
                 maleCharacter.removeAllActions()
             } else if touchedNode == playButton {
@@ -92,6 +90,7 @@ class CharacterSelect: SKScene {
                     if characterIsSelected == true {
                         let scene = StageSelect(size: view.frame.size)
                         scene.scaleMode = .aspectFill
+                        userDef.set(true, forKey: "hasCharacter")
                         view.presentScene(scene,transition: SKTransition.fade(withDuration: 1))
                         view.ignoresSiblingOrder = true
                     }

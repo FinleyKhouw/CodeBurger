@@ -19,7 +19,7 @@ enum WallPlacement {
 
 class MazeStage: SKScene {
     
-    var character = SKSpriteNode()
+    // MARK: Command Assets
     
     var playButton = SKSpriteNode()
     var backButton = SKSpriteNode()
@@ -29,6 +29,9 @@ class MazeStage: SKScene {
     var downTapped = SKSpriteNode()
     var lineSeperator = SKShapeNode()
     
+    // MARK: Stage Assets
+    
+    var character = SKSpriteNode()
     var wall1 = SKSpriteNode()
     var wall2 = SKSpriteNode()
     var wall3 = SKSpriteNode()
@@ -36,17 +39,21 @@ class MazeStage: SKScene {
     var wall5 = SKSpriteNode()
     var wall6 = SKSpriteNode()
     var tiles = SKSpriteNode()
-    var outerFrame = SKSpriteNode()
+    
+    // MARK : Location, Position, and Size
     
     var currentPosition = 0
-    
     var commandLocation = CGPoint(x: 50, y: 900)
     var characterLocation = CGPoint(x: 550, y: 840)
     var commandNodeSize = CGSize(width: 75, height: 75)
     
+    // Command Configuration
+    
     var commands: [Command] = []
     var wallPlacements: [WallPlacement] = []
     var commandNodes: [SKSpriteNode] = []
+    
+    // Movement Action (SKAction)
     
     let moveUp = SKAction.move(by: CGVector(dx: 0, dy: 220), duration: 1)
     let moveDown = SKAction.move(by: CGVector(dx: 0, dy: -220), duration: 1)
@@ -65,56 +72,61 @@ class MazeStage: SKScene {
     
     var isRunning = false
     
+    // MARK: Wall Configuration
+    
     let stage01 = [[1,1,1,0], [1,1,0,0], [0,1,0,0], [0,1,1,0], [1,0,0,1], [0,0,1,0], [1,0,0,0], [0,0,1,0], [1,1,0,0], [0,0,0,1], [0,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,0,1], [0,0,1,1]]
     let stage02 = [[1,1,0,0], [0,1,0,1], [0,1,1,0], [1,1,1,0], [1,0,0,0], [0,1,1,0], [1,0,0,0], [0,0,1,0], [1,0,1,0], [1,0,0,1], [0,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,1,1], [1,0,1,1]]
     let stage03 = [[1,1,1,0], [1,1,0,0], [0,1,0,1], [0,1,1,0], [1,0,1,0], [1,0,0,0], [0,1,0,0], [0,0,1,0], [1,0,0,1], [0,0,1,0], [1,0,1,0], [1,0,1,0], [1,1,1,1], [1,0,1,1], [1,0,1,1], [1,0,1,1]]
     let stage04 = [[1,1,0,1], [0,1,1,0], [1,1,0,0], [0,1,1,1], [1,1,1,0], [1,0,1,0], [1,0,0,0], [0,1,1,0], [1,0,0,0], [0,0,1,1], [1,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,1,1], [1,0,1,1]]
     
     var currentStage:[[Int]] = []
+    var currentStageIndex = 1
+    
+    // MARK: Done Scene Assets
+    
+    var doneBg : SKSpriteNode?
+    var donePopup : SKSpriteNode?
+    var btnStageNext : SKSpriteNode?
+    var btnStageMenu : SKSpriteNode?
+    var btnStageRestart : SKSpriteNode?
     
     override func didMove(to view: SKView) {
         
-        currentStage = stage01
-        
         character = SKSpriteNode(imageNamed: "Boy Char")
-        character.position = characterLocation
-        character.size = CGSize(width: 150, height: 150)
         
         lineSeperator = SKShapeNode(rect: CGRect(x: 0, y: 200, width: 400, height: 10))
-        lineSeperator.fillColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         playButton = SKSpriteNode(imageNamed: "play")
-        playButton.position = CGPoint(x: 890, y: 100)
         playButton.name = "run"
-        playButton.size = CGSize(width: 100, height: 100)
         
         backButton = SKSpriteNode(imageNamed: "back")
         backButton.name = "back"
-        backButton.position = CGPoint(x: 50, y: 970)
-        backButton.size = CGSize(width: 50, height: 50)
         
         leftTapped = SKSpriteNode(imageNamed: "Left")
         leftTapped.name = "left"
-        leftTapped.position = CGPoint(x: 50, y: 100)
-        leftTapped.size = CGSize(width: 75, height: 75)
         
         rightTapped = SKSpriteNode(imageNamed: "Right")
         rightTapped.name = "right"
-        rightTapped.position = CGPoint(x: 150, y: 100)
-        rightTapped.size = CGSize(width: 75, height: 75)
         
         upTapped = SKSpriteNode(imageNamed: "Up")
         upTapped.name = "up"
-        upTapped.position = CGPoint(x: 250, y: 100)
-        upTapped.size = CGSize(width: 75, height: 75)
         
         downTapped = SKSpriteNode(imageNamed: "Down")
         downTapped.name = "down"
-        downTapped.position = CGPoint(x: 350, y: 100)
-        downTapped.size = CGSize(width: 75, height: 75)
         
+        doneBg = self.childNode(withName: "//cmd-done-bg") as? SKSpriteNode
+        donePopup = self.childNode(withName: "//cmd-done-popup") as? SKSpriteNode
+        btnStageNext = self.childNode(withName: "//cmd-stage-next") as? SKSpriteNode
+        btnStageMenu = self.childNode(withName: "//cmd-stage-menu") as? SKSpriteNode
+        btnStageRestart = self.childNode(withName: "//cmd-stage-restart") as? SKSpriteNode
+        
+        btnStageMenu?.name = "Menu Button"
+        btnStageNext?.name = "Next Button"
+        btnStageRestart?.name = "Restart Button"
+        
+        loadStage()
         addChilds()
-        
+        removeDoneScene()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -122,7 +134,7 @@ class MazeStage: SKScene {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
         let touchedNode = self.atPoint(location)
-        print(location)
+//        print(location)
         
         if (touchedNode.name == "up"){
             commands.append(.up)
@@ -136,7 +148,14 @@ class MazeStage: SKScene {
         } else if (touchedNode.name == "right") {
             commands.append(.right)
             addCommandNode(.right)
-        } else {
+        } else if (touchedNode.name == "Menu Button") {
+            
+        } else if (touchedNode.name == "Next Button") {
+            nextStage()
+        } else if (touchedNode.name == "Restart Button") {
+            
+        }
+        else {
             var shiftUp = false
             for (index, commandNode) in commandNodes.enumerated() {
                 if touchedNode == commandNode {
@@ -167,13 +186,7 @@ class MazeStage: SKScene {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let gameViewController = storyBoard.instantiateViewController(withIdentifier: "gameViewController") as! GameViewController
                 self.view?.window?.rootViewController!.present(gameViewController, animated: true, completion: nil)
-                print("DiCKToll")
             }
-            
-//            if commandLocation.y == 200 {
-//                commandLocation.x += 100
-//                commandLocation.y = 900
-//            }
         }
     }
     
@@ -208,12 +221,6 @@ class MazeStage: SKScene {
         addChild(commandNode)
         commandNodes.append(commandNode)
     }
-    
-    //    func removeCommandNodes() {
-    //        for commandNode in commandNodes {
-    //            commandNode.removeFromParent()
-    //        }
-    //    }
     
     func runButtonTapped() {
         
@@ -265,18 +272,11 @@ class MazeStage: SKScene {
                 commandSequence.append(wait)
             }
             if currentPosition == 15 {
-                
-                let finishedBackground = SKSpriteNode(imageNamed: "Victory Scene")
-                finishedBackground.position = CGPoint(x: 682, y: 600)
-                finishedBackground.zPosition = 15
-                
-                let scaleOut = SKAction.scale(to: 1.5, duration: 0.01)
-                
-                let addFinishedScene = SKAction.run {
-                    self.addChild(finishedBackground)
-                    finishedBackground.run(scaleOut)
+                let doneAction = SKAction.run {
+                    self.doneScene()
                 }
-                commandSequence.append(addFinishedScene)
+                commandSequence.append(doneAction)
+                
             }
         }
         character.run(SKAction.sequence(commandSequence), completion: {
@@ -284,6 +284,55 @@ class MazeStage: SKScene {
             self.playButton.run(SKAction.fadeIn(withDuration: 0.5))
             self.currentPosition = 0
         })
+    }
+    
+    func loadStage() {
+        character.position = characterLocation
+        character.size = CGSize(width: 150, height: 150)
+        
+        lineSeperator.fillColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        playButton.position = CGPoint(x: 890, y: 100)
+        playButton.size = CGSize(width: 100, height: 100)
+        
+        backButton.position = CGPoint(x: 50, y: 970)
+        backButton.size = CGSize(width: 50, height: 50)
+        
+        leftTapped.position = CGPoint(x: 50, y: 100)
+        leftTapped.size = CGSize(width: 75, height: 75)
+        
+        rightTapped.position = CGPoint(x: 150, y: 100)
+        rightTapped.size = CGSize(width: 75, height: 75)
+        
+        upTapped.position = CGPoint(x: 250, y: 100)
+        upTapped.size = CGSize(width: 75, height: 75)
+        
+        downTapped.position = CGPoint(x: 350, y: 100)
+        downTapped.size = CGSize(width: 75, height: 75)
+        
+        if currentStageIndex == 1 {
+            currentStage = stage01
+        }
+        if currentStageIndex == 2 {
+            currentStage = stage02
+        }
+        if currentStageIndex == 3 {
+            currentStage = stage03
+        }
+        if currentStageIndex == 4 {
+            currentStage = stage04
+        }
+        
+//        print(currentStageIndex)
+//        currentStageIndex += 1
+    }
+    
+    func doneScene() {
+        addChild(doneBg!)
+    }
+    
+    func removeDoneScene() {
+        doneBg?.removeFromParent()
     }
     
     func addChilds() {
@@ -295,6 +344,28 @@ class MazeStage: SKScene {
         addChild(leftTapped)
         addChild(upTapped)
         addChild(downTapped)
+    }
+    
+    func nextStage() {
+        let spawn = SKAction.run {
+            self.removeAllChildren()
+            self.removeFromParent()
+        }
+        let changeScene = SKAction.run {
+            let transition = SKTransition.crossFade(withDuration: 0.5)
+            let scene = MazeStage(fileNamed: "MazeStage\(self.currentStageIndex)")
+            scene?.scaleMode = .aspectFill
+            scene?.currentStageIndex = self.currentStageIndex + 1
+            self.scene?.view?.presentScene(scene!, transition: transition)
+        }
+        let loadScene = SKAction.run {
+            self.loadStage()
+            self.addChilds()
+            self.removeDoneScene()
+        }
+        currentStage = stage02
+        let sequence = SKAction.sequence([spawn, changeScene, loadScene])
+        run(sequence)
     }
 }
 

@@ -148,6 +148,8 @@ class CommandGameScene: SKScene {
         
         loadStage()
         
+        hideDonePopup()
+        
     }
     
     func loadStage() {
@@ -226,6 +228,7 @@ class CommandGameScene: SKScene {
         } else if node == self.btnStageMenu {
             print("btnStageMenu")
             // go to menu
+            backToStageSelect()
         } else if node == self.btnStageRestart {
             print("btnStageRestart")
             loadStage()
@@ -233,8 +236,7 @@ class CommandGameScene: SKScene {
         } else if node == self.btnBack {
             print("btnBack")
             // go to menu
-            // for testing: show done popup
-            showDonePopup()
+            backToStageSelect()
         } else {
             // tap command nodes to remove
             var shiftUp = false
@@ -425,6 +427,11 @@ class CommandGameScene: SKScene {
         doneBg?.zPosition = 5
     }
     
+    func backToStageSelect() {
+        print(#function)
+        
+        
+    }
     
     // MARK: - Touch Listener
     

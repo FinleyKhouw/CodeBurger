@@ -52,7 +52,17 @@ class SequenceStageThree: SKScene {
     
     override func didMove(to view: SKView) {
         self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        backBtn = self.childNode(withName: "backBtn") as? SKSpriteNode
+        doneBg = self.childNode(withName: "//cmd-done-bg") as? SKSpriteNode
+        donePopup = self.childNode(withName: "//cmd-done-popup") as? SKSpriteNode
+        btnStageNext = self.childNode(withName: "//cmd-stage-next") as? SKSpriteNode
+        btnStageMenu = self.childNode(withName: "//cmd-stage-menu") as? SKSpriteNode
+        btnStageRestart = self.childNode(withName: "//cmd-stage-restart") as? SKSpriteNode
         boundary = self.childNode(withName: "boundary") as? SKSpriteNode
+        satuKecil = self.childNode(withName: "satuKecil") as? SKSpriteNode
+        satuSedang = self.childNode(withName: "satuSedang") as? SKSpriteNode
+        satuBesar = self.childNode(withName: "satuBesar") as? SKSpriteNode
         duaKecil = self.childNode(withName: "duaKecil") as? SKSpriteNode
         duaSedeng = self.childNode(withName: "duaSedeng") as? SKSpriteNode
         duaBeser = self.childNode(withName: "duaBeser") as? SKSpriteNode
@@ -67,10 +77,11 @@ class SequenceStageThree: SKScene {
         limaBesur = self.childNode(withName: "limaBesur") as? SKSpriteNode
         meja = self.childNode(withName: "meja") as? SKSpriteNode
         
+        boundary.zPosition = -1
         meja.zPosition = -1
         
         
-        
+        hideDonePopup()
         hideFase()
     }
     
@@ -125,6 +136,26 @@ class SequenceStageThree: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for touch in touches{
+            let touch: UITouch = touches.first as! UITouch
+            let location = touch.location(in: self)
+            let touchedNode = self.atPoint(location)
+            
+            if (touchedNode == btnStageNext){
+                changeSceneCommand()
+            } else if (touchedNode == btnStageRestart){
+                hideDonePopup()
+                restart()
+            } else if touchedNode == btnStageMenu{
+                guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
+                self.scene?.view?.presentScene(scene)
+            } else if touchedNode == backBtn{
+                guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
+                self.scene?.view?.presentScene(scene)
+            }
+        }
+        
         guard let node = self.currentNode else {return}
         
         if targetKecil.contains(node.position) {
@@ -180,6 +211,26 @@ class SequenceStageThree: SKScene {
         self.currentNode = nil
         
         checkLogic()
+    }
+    
+    func hideDonePopup() {
+        print(#function)
+        doneBg?.removeFromParent()
+    }
+    
+    func showDonePopup() {
+        print(#function)
+        addChild(doneBg!)
+        doneBg?.zPosition = 5
+    }
+    
+    func restart(){
+        arrayKotak = [0,0,0]
+        hideFase()
+        
+        satuSedang.run(SKAction.move(to: initialSedang, duration: 0.1))
+        satuKecil.run(SKAction.move(to: initialKecil, duration:  0.1))
+        satuBesar.run(SKAction.move(to: initialBesar, duration:  0.1))
     }
     
    func hideFase(){
@@ -254,8 +305,15 @@ class SequenceStageThree: SKScene {
                 
                 arrayKotak = [0,0,0]
             } else if fase == 5{
-                print ("HORE")
+                showDonePopup()
             }
         }
+    }
+    
+    func changeSceneCommand() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let sequenceController = storyBoard.instantiateViewController(withIdentifier:
+            "commandStage")
+        self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
     }
 }

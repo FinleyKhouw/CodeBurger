@@ -11,9 +11,39 @@ import SpriteKit
 
 class SequenceStageTwo: SKScene {
     
+    var boundary: SKSpriteNode!
+    var piringSatu: SKSpriteNode!
+    var piringDua: SKSpriteNode!
+    var piringTiga: SKSpriteNode!
+    var satuKecil: SKSpriteNode!
+    var satuSedang: SKSpriteNode!
+    var satuBesar: SKSpriteNode!
+    var duaKecil: SKSpriteNode!
+    var duaSedeng: SKSpriteNode!
+    var duaBeser: SKSpriteNode!
+    var tigaKecol: SKSpriteNode!
+    var tigaSedang: SKSpriteNode!
+    var tigaBesor: SKSpriteNode!
+    var untouchableKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
+    var untouchableSedang =  CGRect(x: 580, y: 50, width: 250, height: 250)
+    let untouchableBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
+    var targetKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
+    let targetSedang = CGRect(x: 580, y: 50, width: 250, height: 250)
+    let targetBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
+    var pointKecil = CGPoint(x: 309, y: 160)
+    var pointSedang = CGPoint(x: 642, y: 160)
+    var pointBesar = CGPoint(x: 1008, y: 160)
+    let initialKecil = CGPoint(x: 405, y: 510)
+    let initialSedang = CGPoint(x: 648, y: 510)
+    let initialBesar = CGPoint(x: 936, y: 510)
+    var arrayKotak = [0,0,0]
+    var fase = 1
+    var meja: SKSpriteNode!
     private var currentNode: SKNode?
     
     override func didMove(to view: SKView) {
+        
+        
         
         self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
@@ -96,7 +126,7 @@ class SequenceStageTwo: SKScene {
             let touchedNode = self.atPoint(location)
             
             if (touchedNode == btnStageNext){
-                guard let scene = SequenceStageTwo(fileNamed: "SequenceStageTwo") else { return }
+                guard let scene = SequenceStageThree(fileNamed: "SequenceStageThree") else { return }
                 self.scene?.view?.presentScene(scene)
             } else if (touchedNode == btnStageRestart){
                 hideDonePopup()

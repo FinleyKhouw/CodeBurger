@@ -9,43 +9,45 @@
 import SpriteKit
 
 
-var boundary: SKSpriteNode!
-var piringSatu: SKSpriteNode!
-var piringDua: SKSpriteNode!
-var piringTiga: SKSpriteNode!
-var satuKecil: SKSpriteNode!
-var satuSedang: SKSpriteNode!
-var satuBesar: SKSpriteNode!
-var duaKecil: SKSpriteNode!
-var duaSedeng: SKSpriteNode!
-var duaBeser: SKSpriteNode!
-var tigaKecol: SKSpriteNode!
-var tigaSedang: SKSpriteNode!
-var tigaBesor: SKSpriteNode!
-var untouchableKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
-var untouchableSedang =  CGRect(x: 580, y: 50, width: 250, height: 250)
-let untouchableBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
-var targetKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
-let targetSedang = CGRect(x: 580, y: 50, width: 250, height: 250)
-let targetBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
-var pointKecil = CGPoint(x: 309, y: 160)
-var pointSedang = CGPoint(x: 642, y: 160)
-var pointBesar = CGPoint(x: 1008, y: 160)
-let initialKecil = CGPoint(x: 405, y: 510)
-let initialSedang = CGPoint(x: 648, y: 510)
-let initialBesar = CGPoint(x: 936, y: 510)
-var arrayKotak = [0,0,0]
-var fase = 1
-var empatKecil: SKSpriteNode!
-var empatSedang: SKSpriteNode!
-var empatBesar: SKSpriteNode!
-var limaKecul: SKSpriteNode!
-var limaSedung: SKSpriteNode!
-var limaBesur: SKSpriteNode!
-var meja: SKSpriteNode!
+
 
 
 class SequenceStageThree: SKScene {
+    
+    var boundary: SKSpriteNode!
+    var piringSatu: SKSpriteNode!
+    var piringDua: SKSpriteNode!
+    var piringTiga: SKSpriteNode!
+    var satuKecil: SKSpriteNode!
+    var satuSedang: SKSpriteNode!
+    var satuBesar: SKSpriteNode!
+    var duaKecil: SKSpriteNode!
+    var duaSedeng: SKSpriteNode!
+    var duaBeser: SKSpriteNode!
+    var tigaKecol: SKSpriteNode!
+    var tigaSedang: SKSpriteNode!
+    var tigaBesor: SKSpriteNode!
+    var untouchableKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
+    var untouchableSedang =  CGRect(x: 580, y: 50, width: 250, height: 250)
+    let untouchableBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
+    var targetKecil = CGRect(x: 210, y: 50, width: 250, height: 250)
+    let targetSedang = CGRect(x: 580, y: 50, width: 250, height: 250)
+    let targetBesar = CGRect(x: 909, y: 50, width: 250, height: 250)
+    var pointKecil = CGPoint(x: 309, y: 160)
+    var pointSedang = CGPoint(x: 642, y: 160)
+    var pointBesar = CGPoint(x: 1008, y: 160)
+    let initialKecil = CGPoint(x: 405, y: 510)
+    let initialSedang = CGPoint(x: 648, y: 510)
+    let initialBesar = CGPoint(x: 936, y: 510)
+    var arrayKotak = [0,0,0]
+    var fase = 1
+    var empatKecil: SKSpriteNode!
+    var empatSedang: SKSpriteNode!
+    var empatBesar: SKSpriteNode!
+    var limaKecul: SKSpriteNode!
+    var limaSedung: SKSpriteNode!
+    var limaBesur: SKSpriteNode!
+    var meja: SKSpriteNode!
     
    private var currentNode: SKNode?
     
@@ -151,8 +153,7 @@ class SequenceStageThree: SKScene {
                 guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
                 self.scene?.view?.presentScene(scene)
             } else if touchedNode == backBtn{
-                guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
-                self.scene?.view?.presentScene(scene)
+                changeSceneSelect()
             }
         }
         
@@ -314,6 +315,13 @@ class SequenceStageThree: SKScene {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let sequenceController = storyBoard.instantiateViewController(withIdentifier:
             "commandStage")
+        self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
+    }
+    
+    func changeSceneSelect(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let sequenceController = storyBoard.instantiateViewController(withIdentifier:
+            "gameViewController")
         self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
     }
 }

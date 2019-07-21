@@ -22,6 +22,7 @@ class SequenceStageOne: SKScene {
     var satuSedang: SKSpriteNode!
     var duaSedang: SKSpriteNode!
     var tigaSedang: SKSpriteNode!
+    var meja: SKSpriteNode!
     var untouchableSedang =  CGRect(x: 580, y: 50, width: 250, height: 250)
     let targetSedang = CGRect(x: 580, y: 50, width: 250, height: 250)
     var pointSedang = CGPoint(x: 642, y: 160)
@@ -65,6 +66,7 @@ class SequenceStageOne: SKScene {
     }
     
     func showDonePopup() {
+        SKAction.wait(forDuration: 1)
         print(#function)
         addChild(doneBg!)
         doneBg?.zPosition = 5

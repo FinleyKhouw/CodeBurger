@@ -11,7 +11,7 @@
 		5E72281A22E168EF00C03477 /* SequenceStageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E72281922E168EF00C03477 /* SequenceStageOne.sks */; };
 		5E72281C22E1713E00C03477 /* SequenceStageTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281B22E1713E00C03477 /* SequenceStageTwo.swift */; };
 		5E72281E22E1715300C03477 /* SequenceStageTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E72281D22E1715300C03477 /* SequenceStageTwo.sks */; };
-		881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881C2E5022DDC2B2006610D9 /* Main.storyboard */; };
+		5EEFC78122E2D28C0021B822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EEFC78022E2D28C0021B822 /* Main.storyboard */; };
 		8855A72722DF35A000D216B8 /* StageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855A72622DF35A000D216B8 /* StageProtocols.swift */; };
 		B564FA5022DF28D50063765B /* MazeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3722DF28D50063765B /* MazeStage.swift */; };
 		B564FA5122DF28D50063765B /* CharacterSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA3922DF28D50063765B /* CharacterSelect.swift */; };
@@ -50,7 +50,7 @@
 		5E72281922E168EF00C03477 /* SequenceStageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStageOne.sks; sourceTree = "<group>"; };
 		5E72281B22E1713E00C03477 /* SequenceStageTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceStageTwo.swift; sourceTree = "<group>"; };
 		5E72281D22E1715300C03477 /* SequenceStageTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStageTwo.sks; sourceTree = "<group>"; };
-		881C2E5022DDC2B2006610D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5EEFC78022E2D28C0021B822 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8855A72622DF35A000D216B8 /* StageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageProtocols.swift; sourceTree = "<group>"; };
 		B564FA3722DF28D50063765B /* MazeStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeStage.swift; sourceTree = "<group>"; };
 		B564FA3922DF28D50063765B /* CharacterSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelect.swift; sourceTree = "<group>"; };
@@ -213,10 +213,10 @@
 				B564FA3522DF28D50063765B /* Maze */,
 				B564FA6222DF28F90063765B /* Resources */,
 				BEA7125522D32B66009F4F5E /* Assets.xcassets */,
-				881C2E5022DDC2B2006610D9 /* Main.storyboard */,
 				BEA7125722D32B66009F4F5E /* LaunchScreen.storyboard */,
 				BE35258622E2057200BAA05B /* Sound Effect */,
 				BEA7125A22D32B66009F4F5E /* Info.plist */,
+				5EEFC78022E2D28C0021B822 /* Main.storyboard */,
 			);
 			path = "Code Burger";
 			sourceTree = "<group>";
@@ -293,6 +293,7 @@
 				B564FA6A22DF28F90063765B /* Hydraulics Engaged.caf in Resources */,
 				B564FA5422DF28D50063765B /* StageTableViewCell.xib in Resources */,
 				BEED959822E08A8100B49DDE /* MazeStage2.sks in Resources */,
+				5EEFC78122E2D28C0021B822 /* Main.storyboard in Resources */,
 				B564FA6B22DF28F90063765B /* Clank.mp3 in Resources */,
 				BE35258822E206D300BAA05B /* slide.wav in Resources */,
 				5E72281A22E168EF00C03477 /* SequenceStageOne.sks in Resources */,

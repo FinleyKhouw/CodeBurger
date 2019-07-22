@@ -223,7 +223,7 @@ class CommandGameScene: SKScene {
                 loadStage()
                 hideDonePopup()
             } else if currStage.stageNum == 7 {
-                // go to next game (Maze)
+                changeSceneMaze()
             }
         } else if node == self.btnStageMenu {
             print("btnStageMenu")
@@ -431,6 +431,13 @@ class CommandGameScene: SKScene {
         print(#function)
         
         
+    }
+    
+    func changeSceneMaze() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let sequenceController = storyBoard.instantiateViewController(withIdentifier:
+            "mazeStage")
+        self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
     }
     
     // MARK: - Touch Listener

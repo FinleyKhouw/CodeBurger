@@ -17,8 +17,10 @@ class StageSelect: SKScene {
                             2: "mazeStage"]
     
     var stageTableView = GameRoomTableView()
-    let backButton = SKSpriteNode(imageNamed: "backbutton")
-    
+    let backButton = SKSpriteNode(imageNamed: "back")
+    let character = SKSpriteNode(imageNamed: "Stage Select Character")
+    let bubbleChat = SKSpriteNode(imageNamed: "Bubble Chat")
+    let helloText = SKLabelNode(text: "Woooaaaaa...")
     let userDef = UserDefaults.standard
     
     override func didMove(to view: SKView) {
@@ -38,6 +40,24 @@ class StageSelect: SKScene {
         self.scene?.view?.addSubview(stageTableView)
         stageTableView.reloadData()
         stageTableView.stageProtocols = self
+        
+        character.size = CGSize(width: size.width/4, height: size.width/4)
+        character.anchorPoint = CGPoint(x: 0.5, y: 1.0)
+        character.position = CGPoint(x: size.width/4, y: size.height/2)
+        addChild(character)
+        
+        bubbleChat.size = CGSize(width: size.width/3, height: size.height/6)
+        bubbleChat.anchorPoint = CGPoint(x: 0.5, y: 0)
+        bubbleChat.position = CGPoint(x: size.width/4, y: size.height/3 + size.height/5)
+        addChild(bubbleChat)
+        
+        helloText.fontSize = 35
+        helloText.fontName = "Chalkduster"
+        helloText.zPosition = 3
+        helloText.color = .black
+        helloText.colorBlendFactor = 1.0
+        helloText.position = CGPoint(x:size.width/4 , y: size.height/2 + (size.height/2)/4)
+        addChild(helloText)
         
         backButton.position = CGPoint(x: size.width/1 - (size.width * 0.9) , y: size.height * 0.9)
         backButton.size = CGSize(width: 100, height: 100)

@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
 
     var hasCharacter = false
     var selectedCharacter: String = "MALE"
-    var stageIndex = 0
+    var stageIndex = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class GameViewController: UIViewController {
         }
         
         if userDef.integer(forKey: "stageIndex") == nil {
-            userDef.set(stageIndex, forKey: "stageIndex")
+            userDef.set(12, forKey: "stageIndex")
         }
     }
 

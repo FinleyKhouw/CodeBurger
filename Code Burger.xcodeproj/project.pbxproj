@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E710FF522E57DF800EF758E /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5E710FF422E57DF800EF758E /* backsound.mp3 */; };
 		5E72281822E071BB00C03477 /* SequenceStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281722E071BB00C03477 /* SequenceStageOne.swift */; };
 		5E72281A22E168EF00C03477 /* SequenceStageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E72281922E168EF00C03477 /* SequenceStageOne.sks */; };
 		5E72281C22E1713E00C03477 /* SequenceStageTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72281B22E1713E00C03477 /* SequenceStageTwo.swift */; };
@@ -28,7 +29,6 @@
 		B564FA6022DF28D50063765B /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA4D22DF28D50063765B /* CommandGameViewController.swift */; };
 		B564FA6122DF28D50063765B /* CommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FA4E22DF28D50063765B /* CommandGameScene.swift */; };
 		B564FA6822DF28F90063765B /* Computer Data 03.caf in Resources */ = {isa = PBXBuildFile; fileRef = B564FA6422DF28F90063765B /* Computer Data 03.caf */; };
-		B564FA6922DF28F90063765B /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B564FA6522DF28F90063765B /* backsound.mp3 */; };
 		B564FA6A22DF28F90063765B /* Hydraulics Engaged.caf in Resources */ = {isa = PBXBuildFile; fileRef = B564FA6622DF28F90063765B /* Hydraulics Engaged.caf */; };
 		B564FA6B22DF28F90063765B /* Clank.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B564FA6722DF28F90063765B /* Clank.mp3 */; };
 		BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7124822D32B65009F4F5E /* AppDelegate.swift */; };
@@ -43,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E710FF422E57DF800EF758E /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
 		5E72281722E071BB00C03477 /* SequenceStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceStageOne.swift; sourceTree = "<group>"; };
 		5E72281922E168EF00C03477 /* SequenceStageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SequenceStageOne.sks; sourceTree = "<group>"; };
 		5E72281B22E1713E00C03477 /* SequenceStageTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceStageTwo.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		B564FA4D22DF28D50063765B /* CommandGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
 		B564FA4E22DF28D50063765B /* CommandGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameScene.swift; sourceTree = "<group>"; };
 		B564FA6422DF28F90063765B /* Computer Data 03.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Computer Data 03.caf"; sourceTree = "<group>"; };
-		B564FA6522DF28F90063765B /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
 		B564FA6622DF28F90063765B /* Hydraulics Engaged.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hydraulics Engaged.caf"; sourceTree = "<group>"; };
 		B564FA6722DF28F90063765B /* Clank.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clank.mp3; sourceTree = "<group>"; };
 		BEA7124522D32B65009F4F5E /* Code Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Burger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				B564FA6422DF28F90063765B /* Computer Data 03.caf */,
-				B564FA6522DF28F90063765B /* backsound.mp3 */,
+				5E710FF422E57DF800EF758E /* backsound.mp3 */,
 				B564FA6622DF28F90063765B /* Hydraulics Engaged.caf */,
 				B564FA6722DF28F90063765B /* Clank.mp3 */,
 			);
@@ -263,13 +263,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B564FA6822DF28F90063765B /* Computer Data 03.caf in Resources */,
-				B564FA6922DF28F90063765B /* backsound.mp3 in Resources */,
 				BEED959922E08A8100B49DDE /* MazeStage3.sks in Resources */,
 				BEED959D22E1B76300B49DDE /* MazeStage0.sks in Resources */,
 				BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */,
 				BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */,
 				B564FA5F22DF28D50063765B /* CommandGameScene.sks in Resources */,
 				BEED959A22E08A8100B49DDE /* MazeStage1.sks in Resources */,
+				5E710FF522E57DF800EF758E /* backsound.mp3 in Resources */,
 				B564FA6A22DF28F90063765B /* Hydraulics Engaged.caf in Resources */,
 				B564FA5422DF28D50063765B /* StageTableViewCell.xib in Resources */,
 				BEED959822E08A8100B49DDE /* MazeStage2.sks in Resources */,

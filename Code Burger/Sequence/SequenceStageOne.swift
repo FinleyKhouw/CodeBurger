@@ -79,6 +79,17 @@ class SequenceStageOne: SKScene {
         satuSedang.run(SKAction.move(to: initialSedang, duration: 0.1))
     }
     
+    func changeSceneSelect(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let gameController = storyBoard.instantiateViewController(withIdentifier:
+            "gameViewController")
+        //        self.view?.window?.rootViewController!.present(gameController, animated: true, completion: nil)
+        //         guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegate.window?.rootViewController = gameController
+        //        self.view?.scene?.view?.presentScene(scene)
+    }
+    
     override func didMove(to view: SKView) {
         self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
@@ -155,11 +166,9 @@ class SequenceStageOne: SKScene {
                 hideDonePopup()
                 restart()
             } else if touchedNode == btnStageMenu{
-                guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
-                self.scene?.view?.presentScene(scene)
+                changeSceneSelect()
             } else if touchedNode == backBtn{
-                guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
-                self.scene?.view?.presentScene(scene)
+                changeSceneSelect()
             }
         }
         

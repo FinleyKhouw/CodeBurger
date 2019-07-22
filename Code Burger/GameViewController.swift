@@ -26,7 +26,6 @@ class GameViewController: UIViewController {
         
         // Save Stage Data if data is nil so save it
         getData()
-        
         if (self.view as! SKView?) != nil {
             // Load the SKScene from 'GameScene.sks'
             if let view = self.view as! SKView? {
@@ -39,8 +38,14 @@ class GameViewController: UIViewController {
                 } catch {
                     print(error)
                 }
-                audioPlayer.numberOfLoops = -1
-                audioPlayer.play()
+                if !userDef.bool(forKey: "playerPlaying") {
+                    audioPlayer.numberOfLoops = -1
+                    audioPlayer.play()
+                    userDef.set(true, forKey: "playerPlaying")
+                } else {
+                    userDef.set(false, forKey: "playerPlaying")
+                }
+                
                 view.showsFPS = false
                 view.showsNodeCount = true
             }

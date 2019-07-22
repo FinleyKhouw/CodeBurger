@@ -135,8 +135,7 @@ class SequenceStageTwo: SKScene {
                 guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
                 self.scene?.view?.presentScene(scene)
             } else if touchedNode == backBtn{
-                guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
-                self.scene?.view?.presentScene(scene)
+                changeSceneSelect()
             }
         }
         
@@ -225,6 +224,13 @@ class SequenceStageTwo: SKScene {
         tigaSedang.isHidden = true
         tigaBesor.isHidden = true
         
+    }
+    
+    func changeSceneSelect(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let sequenceController = storyBoard.instantiateViewController(withIdentifier:
+            "gameViewController")
+        self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
     }
     
     func checkLogic(){

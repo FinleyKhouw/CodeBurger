@@ -52,8 +52,11 @@ class SequenceStageThree: SKScene {
    private var currentNode: SKNode?
     
     
+    
+    
     override func didMove(to view: SKView) {
         self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
         
         backBtn = self.childNode(withName: "backBtn") as? SKSpriteNode
         doneBg = self.childNode(withName: "//cmd-done-bg") as? SKSpriteNode
@@ -315,13 +318,19 @@ class SequenceStageThree: SKScene {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let sequenceController = storyBoard.instantiateViewController(withIdentifier:
             "commandStage")
-        self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegate.window?.rootViewController = sequenceController
+//        self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
     }
     
     func changeSceneSelect(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let sequenceController = storyBoard.instantiateViewController(withIdentifier:
+        let gameController = storyBoard.instantiateViewController(withIdentifier:
             "gameViewController")
-        self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
+//        self.view?.window?.rootViewController!.present(gameController, animated: true, completion: nil)
+//         guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegate.window?.rootViewController = gameController
+//        self.view?.scene?.view?.presentScene(scene)
     }
 }

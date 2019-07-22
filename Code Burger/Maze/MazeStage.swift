@@ -43,8 +43,8 @@ class MazeStage: SKScene {
     // MARK: Sound Effect
     
     var playSound = SKAction.playSoundFileNamed("paddleBlip", waitForCompletion: false)
-    var successSound = SKAction.playSoundFileNamed("game-won", waitForCompletion: false)
-    var walkSound = SKAction.playSoundFileNamed("slide", waitForCompletion: false)
+//    var successSound = SKAction.playSoundFileNamed("game-won", waitForCompletion: false)
+//    var walkSound = SKAction.playSoundFileNamed("slide", waitForCompletion: false)
     
     // MARK : Location, Position, and Size
     
@@ -98,8 +98,8 @@ class MazeStage: SKScene {
     
     override func didMove(to view: SKView) {
         
-        walkSound.timingMode = .easeInEaseOut
-        walkSound.duration = 1
+//        walkSound.timingMode = .easeInEaseOut
+//        walkSound.duration = 1
         
         character = SKSpriteNode(imageNamed: "Boy Char")
         
@@ -158,11 +158,13 @@ class MazeStage: SKScene {
             commands.append(.right)
             addCommandNode(.right)
         } else if (touchedNode.name == "Menu Button") {
-            
+            let scene = StageSelect(size: view!.frame.size)
+            scene.scaleMode = .aspectFill
+            view!.presentScene(scene,transition: SKTransition.fade(withDuration: 1))
         } else if (touchedNode.name == "Next Button") {
             nextStage()
         } else if (touchedNode.name == "Restart Button") {
-            
+            restartStage()
         }
         else {
             var shiftUp = false
@@ -285,7 +287,8 @@ class MazeStage: SKScene {
             if currentPosition == 15 {
                 let doneAction = SKAction.run {
                     self.doneScene()
-                    self.run(self.successSound)
+//                    self.run(self.successSound)
+//                    self.currentStageIndex += 1
                 }
                 commandSequence.append(doneAction)
                 
@@ -334,9 +337,6 @@ class MazeStage: SKScene {
         if currentStageIndex == 4 {
             currentStage = stage04
         }
-        
-//        print(currentStageIndex)
-//        currentStageIndex += 1
     }
     
     func doneScene() {
@@ -365,9 +365,11 @@ class MazeStage: SKScene {
         }
         let changeScene = SKAction.run {
             let transition = SKTransition.crossFade(withDuration: 0.5)
-            let scene = MazeStage(fileNamed: "MazeStage\(self.currentStageIndex)")
-            scene?.scaleMode = .aspectFill
+            let scene = MazeStage(fileNamed: "MazeStage\(self.currentStageIndex + 1)")
             scene?.currentStageIndex = self.currentStageIndex + 1
+            print(self.currentStageIndex)
+            print(MazeStage.self)
+            scene?.scaleMode = .aspectFill
             self.scene?.view?.presentScene(scene!, transition: transition)
         }
         let loadScene = SKAction.run {
@@ -375,7 +377,28 @@ class MazeStage: SKScene {
             self.addChilds()
             self.removeDoneScene()
         }
-        currentStage = stage02
+//        currentStage = stage02
+        let sequence = SKAction.sequence([spawn, changeScene, loadScene])
+        run(sequence)
+    }
+    
+    func restartStage() {
+        let spawn = SKAction.run {
+            self.removeAllChildren()
+            self.removeFromParent()
+        }
+        let changeScene = SKAction.run {
+            let transition = SKTransition.crossFade(withDuration: 0.5)
+            let scene = MazeStage(fileNamed: "MazeStage\(self.currentStageIndex)")
+//            scene?.currentStageIndex = self.currentStageIndex + 1
+            scene?.scaleMode = .aspectFill
+            self.scene?.view?.presentScene(scene!, transition: transition)
+        }
+        let loadScene = SKAction.run {
+            self.loadStage()
+            self.addChilds()
+            self.removeDoneScene()
+        }
         let sequence = SKAction.sequence([spawn, changeScene, loadScene])
         run(sequence)
     }

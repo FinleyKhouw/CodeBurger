@@ -31,6 +31,9 @@
 		B564FA6922DF28F90063765B /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B564FA6522DF28F90063765B /* backsound.mp3 */; };
 		B564FA6A22DF28F90063765B /* Hydraulics Engaged.caf in Resources */ = {isa = PBXBuildFile; fileRef = B564FA6622DF28F90063765B /* Hydraulics Engaged.caf */; };
 		B564FA6B22DF28F90063765B /* Clank.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B564FA6722DF28F90063765B /* Clank.mp3 */; };
+		BE35258322E2047400BAA05B /* paddleBlip.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE35258222E2047400BAA05B /* paddleBlip.wav */; };
+		BE35258522E204E100BAA05B /* game-won.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE35258422E204E100BAA05B /* game-won.mp3 */; };
+		BE35258822E206D300BAA05B /* slide.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE35258722E206D200BAA05B /* slide.wav */; };
 		BEA7124922D32B65009F4F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7124822D32B65009F4F5E /* AppDelegate.swift */; };
 		BEA7125122D32B65009F4F5E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7125022D32B65009F4F5E /* GameViewController.swift */; };
 		BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7125522D32B66009F4F5E /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		B564FA6522DF28F90063765B /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
 		B564FA6622DF28F90063765B /* Hydraulics Engaged.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hydraulics Engaged.caf"; sourceTree = "<group>"; };
 		B564FA6722DF28F90063765B /* Clank.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clank.mp3; sourceTree = "<group>"; };
+		BE35258222E2047400BAA05B /* paddleBlip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = paddleBlip.wav; sourceTree = "<group>"; };
+		BE35258422E204E100BAA05B /* game-won.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-won.mp3"; sourceTree = "<group>"; };
+		BE35258722E206D200BAA05B /* slide.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slide.wav; sourceTree = "<group>"; };
 		BEA7124522D32B65009F4F5E /* Code Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Burger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA7124822D32B65009F4F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA7125022D32B65009F4F5E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +176,16 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		BE35258622E2057200BAA05B /* Sound Effect */ = {
+			isa = PBXGroup;
+			children = (
+				BE35258722E206D200BAA05B /* slide.wav */,
+				BE35258222E2047400BAA05B /* paddleBlip.wav */,
+				BE35258422E204E100BAA05B /* game-won.mp3 */,
+			);
+			path = "Sound Effect";
+			sourceTree = "<group>";
+		};
 		BEA7123C22D32B65009F4F5E = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +215,7 @@
 				BEA7125522D32B66009F4F5E /* Assets.xcassets */,
 				881C2E5022DDC2B2006610D9 /* Main.storyboard */,
 				BEA7125722D32B66009F4F5E /* LaunchScreen.storyboard */,
+				BE35258622E2057200BAA05B /* Sound Effect */,
 				BEA7125A22D32B66009F4F5E /* Info.plist */,
 			);
 			path = "Code Burger";
@@ -263,9 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B564FA6822DF28F90063765B /* Computer Data 03.caf in Resources */,
+				BE35258522E204E100BAA05B /* game-won.mp3 in Resources */,
 				881C2E5122DDC2B3006610D9 /* Main.storyboard in Resources */,
 				B564FA6922DF28F90063765B /* backsound.mp3 in Resources */,
 				BEED959922E08A8100B49DDE /* MazeStage3.sks in Resources */,
+				BE35258322E2047400BAA05B /* paddleBlip.wav in Resources */,
 				BEED959D22E1B76300B49DDE /* MazeStage0.sks in Resources */,
 				BEA7125622D32B66009F4F5E /* Assets.xcassets in Resources */,
 				BEA7125922D32B66009F4F5E /* LaunchScreen.storyboard in Resources */,
@@ -275,6 +294,7 @@
 				B564FA5422DF28D50063765B /* StageTableViewCell.xib in Resources */,
 				BEED959822E08A8100B49DDE /* MazeStage2.sks in Resources */,
 				B564FA6B22DF28F90063765B /* Clank.mp3 in Resources */,
+				BE35258822E206D300BAA05B /* slide.wav in Resources */,
 				5E72281A22E168EF00C03477 /* SequenceStageOne.sks in Resources */,
 				B564FA5D22DF28D50063765B /* SequenceStageThree.sks in Resources */,
 				5E72281E22E1715300C03477 /* SequenceStageTwo.sks in Resources */,
@@ -443,7 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9RKKB6DTX4;
+				DEVELOPMENT_TEAM = KWAHL2M87Z;
 				INFOPLIST_FILE = "Code Burger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,7 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9RKKB6DTX4;
+				DEVELOPMENT_TEAM = KWAHL2M87Z;
 				INFOPLIST_FILE = "Code Burger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

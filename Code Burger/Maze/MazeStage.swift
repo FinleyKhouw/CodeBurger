@@ -40,6 +40,12 @@ class MazeStage: SKScene {
     var wall6 = SKSpriteNode()
     var tiles = SKSpriteNode()
     
+    // MARK: Sound Effect
+    
+    var playSound = SKAction.playSoundFileNamed("paddleBlip", waitForCompletion: false)
+    var successSound = SKAction.playSoundFileNamed("game-won", waitForCompletion: false)
+    var walkSound = SKAction.playSoundFileNamed("slide", waitForCompletion: false)
+    
     // MARK : Location, Position, and Size
     
     var currentPosition = 0
@@ -91,6 +97,9 @@ class MazeStage: SKScene {
     var btnStageRestart : SKSpriteNode?
     
     override func didMove(to view: SKView) {
+        
+        walkSound.timingMode = .easeInEaseOut
+        walkSound.duration = 1
         
         character = SKSpriteNode(imageNamed: "Boy Char")
         
@@ -180,6 +189,7 @@ class MazeStage: SKScene {
                 isRunning = true
                 playButton.run(SKAction.fadeOut(withDuration: 0.5))
                 runButtonTapped()
+                run(playSound)
             }
         
             if (touchedNode.name == "back"){
@@ -240,6 +250,7 @@ class MazeStage: SKScene {
                     currentPosition -= 1
                 }
                 commandSequence.append(wait)
+                
             case .right:
                 let canGoRight = currentStage[currentPosition][2]
                 if canGoRight == 1 {
@@ -274,6 +285,7 @@ class MazeStage: SKScene {
             if currentPosition == 15 {
                 let doneAction = SKAction.run {
                     self.doneScene()
+                    self.run(self.successSound)
                 }
                 commandSequence.append(doneAction)
                 

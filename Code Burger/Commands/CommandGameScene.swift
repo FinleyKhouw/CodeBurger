@@ -54,9 +54,18 @@ let stage7 = CommandStage(stageNum: 7,
                           burgerPosition: 2,
                           targetPosition: 4)
 
+protocol GameManager {
+    
+    func backToStageSelect()
+    
+}
+
 class CommandGameScene: SKScene {
     
+    var stageIndex = 3 // 3 - 6
     private var currStage = stage4
+    
+    var gameManager: GameManager?
     
     // Objects
     
@@ -153,6 +162,18 @@ class CommandGameScene: SKScene {
     }
     
     func loadStage() {
+        
+        if stageIndex == 3 {
+            self.currStage = stage4
+        } else if stageIndex == 4 {
+            self.currStage = stage5
+        } else if stageIndex == 5 {
+            self.currStage = stage6
+        } else if stageIndex == 6 {
+            self.currStage = stage7
+        } else {
+            print("invalid stageIndex")
+        }
         
         self.stage?.texture = SKTexture(imageNamed: "cmd-stage-\(self.currStage.numBars)")
         self.catcher?.position = self.currStage.home
@@ -430,7 +451,7 @@ class CommandGameScene: SKScene {
     func backToStageSelect() {
         print(#function)
         
-        
+        gameManager?.backToStageSelect()
     }
     
     func changeSceneMaze() {

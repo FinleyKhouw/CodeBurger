@@ -10,17 +10,20 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class CommandGameViewController: UIViewController {
+class CommandGameViewController: UIViewController, GameManager {
 
+    var stageIndex = 3 // 3 - 6
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "CommandGameScene") {
+            if let scene = SKScene(fileNamed: "CommandGameScene") as? CommandGameScene {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
+                scene.stageIndex = stageIndex
+                scene.gameManager = self
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -30,6 +33,7 @@ class CommandGameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+                
     }
     
     override var shouldAutorotate: Bool {
@@ -44,6 +48,12 @@ class CommandGameViewController: UIViewController {
         return true
     }
 
+    // MARK: - CommandGameManager
+    
+    func backToStageSelect() {
+        dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

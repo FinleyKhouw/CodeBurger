@@ -19,6 +19,8 @@ enum WallPlacement {
 
 class MazeStage: SKScene {
     
+    var gameManager: GameManager?
+    
     // MARK: Command Assets
     
     var playButton = SKSpriteNode()
@@ -165,6 +167,8 @@ class MazeStage: SKScene {
             nextStage()
         } else if (touchedNode.name == "Restart Button") {
             restartStage()
+        } else if (touchedNode.name == "Back Button" ) {
+            gameManager?.backToStageSelect()
         }
         else {
             var shiftUp = false

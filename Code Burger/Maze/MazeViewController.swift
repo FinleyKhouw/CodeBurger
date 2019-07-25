@@ -10,16 +10,17 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class MazeViewController: UIViewController {
+class MazeViewController: UIViewController, GameManager {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "MazeStage1") {
+            if let scene = SKScene(fileNamed: "MazeStage1") as? MazeStage {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
+                scene.gameManager = self
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -42,6 +43,10 @@ class MazeViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func backToStageSelect() {
+        dismiss(animated: true)
     }
     
     /*

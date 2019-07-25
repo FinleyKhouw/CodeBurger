@@ -14,6 +14,8 @@ import SpriteKit
 
 class SequenceStageThree: SKScene {
     
+    var gameManager: GameManager?
+    
     var boundary: SKSpriteNode!
     var piringSatu: SKSpriteNode!
     var piringDua: SKSpriteNode!
@@ -153,8 +155,10 @@ class SequenceStageThree: SKScene {
                 hideDonePopup()
                 restart()
             } else if touchedNode == btnStageMenu{
-                guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
-                self.scene?.view?.presentScene(scene)
+//                guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
+//                self.scene?.view?.presentScene(scene)
+                
+                changeSceneSelect()
             } else if touchedNode == backBtn{
                 changeSceneSelect()
             }
@@ -324,13 +328,12 @@ class SequenceStageThree: SKScene {
     }
     
     func changeSceneSelect(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let gameController = storyBoard.instantiateViewController(withIdentifier:
-            "gameViewController")
-//        self.view?.window?.rootViewController!.present(gameController, animated: true, completion: nil)
-//         guard let scene = StageSelect(fileNamed: "StageSelect") else { return }
-        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
-        appDelegate.window?.rootViewController = gameController
-//        self.view?.scene?.view?.presentScene(scene)
+        //        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        //        let gameController = storyBoard.instantiateViewController(withIdentifier:
+        //            "gameViewController")
+        //        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        //        appDelegate.window?.rootViewController = gameController
+        
+        gameManager?.backToStageSelect()
     }
 }

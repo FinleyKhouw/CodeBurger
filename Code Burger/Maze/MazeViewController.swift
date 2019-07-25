@@ -12,15 +12,19 @@ import GameplayKit
 
 class MazeViewController: UIViewController, GameManager {
     
+    var currentStageIndex = 7 // 7 - 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "MazeStage1") as? MazeStage {
+            let sceneFilename = "MazeStage\(currentStageIndex-6)" // 7-10 -> 1-4
+            if let scene = SKScene(fileNamed: sceneFilename) as? MazeStage {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 scene.gameManager = self
+                scene.currentStageIndex = currentStageIndex
                 
                 // Present the scene
                 view.presentScene(scene)

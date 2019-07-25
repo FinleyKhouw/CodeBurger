@@ -119,7 +119,8 @@ extension StageSelect : StageProtocols {
                     // Sequence
                     if let identifier = responseMessages[indexPath.row] {
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                        let sequenceController = storyBoard.instantiateViewController(withIdentifier: identifier)
+                        let sequenceController = storyBoard.instantiateViewController(withIdentifier: identifier) as! SequenceViewController
+                        sequenceController.stageIndex = indexPath.row
                         self.view?.window?.rootViewController!.present(sequenceController, animated: true, completion: nil)
                     }
                 } else if indexPath.row < 7 {
@@ -130,12 +131,12 @@ extension StageSelect : StageProtocols {
                         commandGameViewController.stageIndex = indexPath.row
                         self.view?.window?.rootViewController!.present(commandGameViewController, animated: true, completion: nil)
                     }
-                } else if indexPath.row < 12 {
+                } else if indexPath.row < 11 {
                     // Maze
                     if let identifier = responseMessages[indexPath.row] {
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                         let mazeViewController = storyBoard.instantiateViewController(withIdentifier: identifier) as! MazeViewController
-                        
+                        mazeViewController.currentStageIndex = indexPath.row
                         self.view?.window?.rootViewController!.present(mazeViewController, animated: true, completion: nil)
                     }
                 }

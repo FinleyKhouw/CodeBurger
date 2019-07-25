@@ -24,7 +24,7 @@ class MazeStage: SKScene {
     // MARK: Command Assets
     
     var playButton = SKSpriteNode()
-    var backButton = SKSpriteNode()
+    //var backButton = SKSpriteNode()
     var leftTapped = SKSpriteNode()
     var rightTapped = SKSpriteNode()
     var upTapped = SKSpriteNode()
@@ -88,7 +88,7 @@ class MazeStage: SKScene {
     let stage04 = [[1,1,0,1], [0,1,1,0], [1,1,0,0], [0,1,1,1], [1,1,1,0], [1,0,1,0], [1,0,0,0], [0,1,1,0], [1,0,0,0], [0,0,1,1], [1,0,1,0], [1,0,1,0], [1,0,0,1], [0,1,0,1], [0,0,1,1], [1,0,1,1]]
     
     var currentStage:[[Int]] = []
-    var currentStageIndex = 1
+    var currentStageIndex = 7 // 7 - 10
     
     // MARK: Done Scene Assets
     
@@ -110,8 +110,8 @@ class MazeStage: SKScene {
         playButton = SKSpriteNode(imageNamed: "play")
         playButton.name = "run"
         
-        backButton = SKSpriteNode(imageNamed: "back")
-        backButton.name = "back"
+        //backButton = SKSpriteNode(imageNamed: "back")
+        //backButton.name = "back"
         
         leftTapped = SKSpriteNode(imageNamed: "Left")
         leftTapped.name = "left"
@@ -291,8 +291,6 @@ class MazeStage: SKScene {
             if currentPosition == 15 {
                 let doneAction = SKAction.run {
                     self.doneScene()
-//                    self.run(self.successSound)
-//                    self.currentStageIndex += 1
                 }
                 commandSequence.append(doneAction)
                 
@@ -306,6 +304,9 @@ class MazeStage: SKScene {
     }
     
     func loadStage() {
+        
+        print("Maze loadStage currentStageIndex: \(currentStageIndex)")
+        
         character.position = characterLocation
         character.size = CGSize(width: 150, height: 150)
         
@@ -314,8 +315,8 @@ class MazeStage: SKScene {
         playButton.position = CGPoint(x: 890, y: 100)
         playButton.size = CGSize(width: 100, height: 100)
         
-        backButton.position = CGPoint(x: 50, y: 970)
-        backButton.size = CGSize(width: 50, height: 50)
+        //backButton.position = CGPoint(x: 50, y: 970)
+        //backButton.size = CGSize(width: 50, height: 50)
         
         leftTapped.position = CGPoint(x: 50, y: 100)
         leftTapped.size = CGSize(width: 75, height: 75)
@@ -329,16 +330,16 @@ class MazeStage: SKScene {
         downTapped.position = CGPoint(x: 350, y: 100)
         downTapped.size = CGSize(width: 75, height: 75)
         
-        if currentStageIndex == 1 {
+        if currentStageIndex == 7 {
             currentStage = stage01
         }
-        if currentStageIndex == 2 {
+        if currentStageIndex == 8 {
             currentStage = stage02
         }
-        if currentStageIndex == 3 {
+        if currentStageIndex == 9 {
             currentStage = stage03
         }
-        if currentStageIndex == 4 {
+        if currentStageIndex == 10 {
             currentStage = stage04
         }
     }
@@ -355,7 +356,7 @@ class MazeStage: SKScene {
         addChild(character)
         addChild(lineSeperator)
         addChild(playButton)
-        addChild(backButton)
+        //addChild(backButton)
         addChild(rightTapped)
         addChild(leftTapped)
         addChild(upTapped)
@@ -369,12 +370,13 @@ class MazeStage: SKScene {
         }
         let changeScene = SKAction.run {
             let transition = SKTransition.crossFade(withDuration: 0.5)
-            let scene = MazeStage(fileNamed: "MazeStage\(self.currentStageIndex + 1)")
-            scene?.currentStageIndex = self.currentStageIndex + 1
+            let nextSceneFilename = "MazeStage\(self.currentStageIndex-6)" // 7-10 -> 1-4
+            let nextScene = MazeStage(fileNamed: nextSceneFilename)
+            nextScene?.currentStageIndex = self.currentStageIndex + 1
             print(self.currentStageIndex)
             print(MazeStage.self)
-            scene?.scaleMode = .aspectFill
-            self.scene?.view?.presentScene(scene!, transition: transition)
+            nextScene?.scaleMode = .aspectFill
+            self.scene?.view?.presentScene(nextScene!, transition: transition)
         }
         let loadScene = SKAction.run {
             self.loadStage()
@@ -393,8 +395,8 @@ class MazeStage: SKScene {
         }
         let changeScene = SKAction.run {
             let transition = SKTransition.crossFade(withDuration: 0.5)
-            let scene = MazeStage(fileNamed: "MazeStage\(self.currentStageIndex)")
-//            scene?.currentStageIndex = self.currentStageIndex + 1
+            let sceneFilename = "MazeStage\(self.currentStageIndex-6)" // 7-10 -> 1-4
+            let scene = MazeStage(fileNamed: sceneFilename)
             scene?.scaleMode = .aspectFill
             self.scene?.view?.presentScene(scene!, transition: transition)
         }
